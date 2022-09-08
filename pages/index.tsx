@@ -1,12 +1,28 @@
 import type { NextPage } from 'next'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
+import { HomeHero, PageWrapper } from '@components'
+import { motion } from 'framer-motion'
+import Layout from '@components/layout'
 
-const Home: NextPage = () => {
-  return (<>
-      <Head>
-        <title> Simple title </title>
-      </Head>
-      <h1>Hello world</h1>
+const MotionHomeHero = motion(HomeHero) as any
+
+interface IProps {
+  loading: boolean
+  percentage: number
+}
+
+const Home: NextPage<IProps> = ({ loading, percentage }) => {
+  return (
+    <>
+      <Layout title="Quentin - Folio 22" description="desc">
+        <MotionHomeHero
+          initial={'loading'}
+          animate={loading ? 'loading' : 'loaded'}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          loadingPercentage={percentage}
+        />
+      </Layout>
     </>
   )
 }

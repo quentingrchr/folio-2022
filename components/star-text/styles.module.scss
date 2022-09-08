@@ -1,0 +1,27 @@
+@import '@styles/theme.scss';
+
+// Your style here
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+}
+
+.text {
+  font-family: $font-roobert;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--text-color, #{$color-black});
+  text-align: justify;
+  width: 27rem;
+  text-transform: uppercase;
+}
+
+.star{
+    svg,path{
+        fill: var(--text-color, #{$color-black});
+    }
+}

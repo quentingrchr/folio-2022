@@ -1,6 +1,12 @@
 // fonts
+$font-harmond: 'Harmond', sans-serif;
+$font-roobert: 'Roobert', sans-serif;
+$font-roxborough: 'RoxboroughCF', sans-serif;
 
 // colors
+$color-white: #F1F1F1;
+$color-black: #000000;
+$color-dark-gray: #333333;
 
 // breakpoints
 $breakpoints: (
@@ -11,3 +17,6 @@ $breakpoints: (
   lg: 1200px,
   xl: 1600px,
 );
+
+// padding
+$page-x-padding: 4.2rem;

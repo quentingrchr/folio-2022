@@ -1,5 +1,3 @@
-
-
 // Respond above.
 @mixin respond-above($breakpoint) {
   // If the breakpoint exists in the map.
@@ -35,4 +33,28 @@
     // Log a warning.
     @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
+}
+
+@mixin typo-nav-item {
+  font-family: $font-roobert;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-text, $color-black);
+}
+
+@mixin typo-title-xxl {
+  font-size: 16rem;
+  font-weight: 400;
+  font-family: $font-roxborough;
+  color: var(--color-text, $color-black);
+}
+
+@mixin main-hero {
+  margin-top: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }

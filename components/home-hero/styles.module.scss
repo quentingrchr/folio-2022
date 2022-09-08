@@ -1,0 +1,84 @@
+@import '@styles/theme.scss';
+
+// Your style here
+
+
+@keyframes star-fade-in {
+  0% {
+    transform: scale(0) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(720deg);
+  }
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.title {
+  @include typo-title-xxl;
+  display: flex;
+  flex-direction: column;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  gap: 2.6rem;
+  &:first-child {
+    overflow: hidden;
+  }
+  &:last-child {
+    margin-top: -2rem;
+  }
+}
+
+.star {
+  margin-bottom: 2.6rem;
+  transform-origin: center;
+  position: relative;
+}
+.word {
+  
+}
+
+.content{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin-bottom: 10rem;
+}
+
+/* sass for loop */
+// @for $i from 1 through 10 {
+//   .word:nth-child(#{$i}) {
+//     animation-delay: calc((#{$i} * 0.4s) + 3s);
+//   }
+// }
+
+
+
+.letter{
+  display: inline-block;
+}
+
+// to offset the padding of the letter Q
+.top {
+  padding-bottom: 3rem;
+}
+.bottom {
+  margin-top: -3rem;
+}
+
+

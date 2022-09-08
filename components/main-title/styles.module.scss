@@ -1,0 +1,28 @@
+@import '@styles/theme.scss';
+
+// Your style here
+
+.title {
+  @include typo-title-xxl;
+  display: flex;
+  flex-direction: column;
+}
+.italic {
+  font-style: italic;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  gap: 2.6rem;
+  &:first-child {
+    overflow: hidden;
+  }
+  &:last-child {
+    margin-top: -2rem;
+  }
+}
+
+.letter {
+  display: inline-block;
+}

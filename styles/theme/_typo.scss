@@ -1,0 +1,41 @@
+/* fonts
+harmond-regular.woff2
+roobert-medium.woff2
+roobert-regular.woff2
+roxboroughcf-regular .woff2
+roxboroughcf-regularitalic.woff2
+*/
+@font-face {
+    font-family: 'Harmond';
+    font-style: normal;
+    font-weight: 400;
+    src: url('~@assets/fonts/harmond-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roobert';
+    font-style: normal;
+    font-weight: 400;
+    src: url('~@assets/fonts/roobert-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roobert';
+    font-style: normal;
+    font-weight: 500;
+    src: url('~@assets/fonts/roobert-medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'RoxboroughCF';
+    font-style: normal;
+    font-weight: 400;
+    src: url('~@assets/fonts/roxboroughcf-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'RoxboroughCF';
+    font-style: italic;
+    font-weight: 400;
+    src: url('~@assets/fonts/roxboroughcf-regularitalic.woff2') format('woff2');
+}

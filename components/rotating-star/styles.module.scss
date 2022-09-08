@@ -1,0 +1,41 @@
+@import '@styles/theme.scss';
+
+// Your style here
+
+.container {
+  position: relative;
+  s.center {
+  }
+}
+
+.thinStarA {
+  position: static;
+  transform-origin: center;
+  svg,
+  path {
+    animation: scale-up 1.8s 0.6s linear forwards;
+    transform-origin: center;
+    fill: var(--text-color);
+    transition: all 0.3s ease;
+  }
+}
+
+.thinStarB {
+  position: absolute;
+  left: 0;
+  height: fit-content;
+
+  svg,
+  path {
+    animation: scale-up 1.3s 0.6s linear forwards;
+    transform-origin: center;
+    fill: var(--text-color);
+    transition: all 0.3s;
+  }
+}
+
+.counter {
+  position: absolute;
+  right: -4rem;
+  top: 3.2rem;
+}

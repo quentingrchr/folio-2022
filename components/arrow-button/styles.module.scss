@@ -1,0 +1,68 @@
+@import '@styles/theme.scss';
+
+// Your style here
+
+.container {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  --offset-parallelogram: 7%;
+  transform: translateY(-1rem);
+  pointer-events: none;
+  
+}
+
+.wrapper {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(2rem);
+}
+
+.icon {
+  margin-bottom: -0.5rem;
+}
+
+.button {
+  white-space: nowrap;
+  clip-path: polygon(
+    var(--offset-parallelogram) 0%,
+    100% 0,
+    calc(100% - var(--offset-parallelogram)) 100%,
+    0% 100%
+  );
+  transition: clip-path 0.3s ease;
+  padding: 0.5rem 1.8rem;
+  background-color: var(--text-color, #{$color-black});
+  font-size: 1.2rem;
+  &:hover {
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
+    > a::before {
+      transform: scaleX(1);
+    }
+  }
+
+  a {
+    color: var(--bg-color, #{$color-white});
+
+    text-transform: uppercase;
+    white-space: nowrap;
+    position: relative;
+    font-size: 1.2rem;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      display: inline-block;
+      height: 1px;
+      background-color: var(--bg-color, #{$color-white});
+      transform-origin: left;
+      transform: scaleX(0);
+      bottom: 0;
+      transition: 0.3s ease transform;
+    }
+  }
+}
