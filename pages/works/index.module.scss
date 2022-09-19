@@ -1,5 +1,55 @@
 @import '@styles/theme.scss';
 
-.container{
-    @include main-hero;
+.container {
+  @include main-hero;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
+
+.works {
+  height: 20rem;
+  background: red;
+  overflow: hidden;
+  display: flex;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+}
+
+.test {
+  font-family: $font-roxborough;
+  font-size: 16rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.titles {
+  width: 100%;
+}
+  
+.scrollContainer {
+  height: calc(100% - var(--margin-top-content));
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  will-change: transform;
+  padding-top: var(--margin-top-content);
+  @include z-index(page);
+}
+

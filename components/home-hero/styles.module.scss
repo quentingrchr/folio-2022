@@ -18,7 +18,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 100vh;
+  padding-top: var(--margin-top-content);
+  // border-box
+  box-sizing: border-box;
+   
 }
 .title {
   @include typo-title-xxl;

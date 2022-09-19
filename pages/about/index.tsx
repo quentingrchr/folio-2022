@@ -12,7 +12,11 @@ const Works: NextPage = () => {
     <>
       <Layout title="My Works" description="desc">
         <div className={s.container}>
-          <MainTitle title="About" />
+          <MainTitle title="[A]bout" />
+         
+        </div>
+        <div className={s.container}>
+        <MainTitle title="[My] Works" />
         </div>
         {/* <div>
           <Swiper

@@ -14,6 +14,9 @@ import PageTitle from './page-title'
 import Layout from './layout'
 import ArrowButton from './arrow-button'
 import MainTitle from './main-title'
+import WorkDescriptions from './work-descriptions'
+import ScrollProgress from './scroll-progress'
+import ThumbnailsSlider from './thumbnails-slider'
 
 
 export {
@@ -28,4 +31,7 @@ export {
     Layout,
     ArrowButton,
     MainTitle,
+    WorkDescriptions,
+    ScrollProgress,
+    ThumbnailsSlider
 }

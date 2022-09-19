@@ -16,7 +16,7 @@ export default function PageWrapper({ children, variant = 'classic' }: IProps) {
       <AnimatePresence>
         {variant === 'classic' && <Nav />}
       </AnimatePresence>
-      <div className={s.main}>{children}</div>
+      <div className={s.page}>{children}</div>
     </div>
   )
 }

@@ -48,13 +48,26 @@
   font-weight: 400;
   font-family: $font-roxborough;
   color: var(--color-text, $color-black);
+  @media screen and (max-height: 900px) {
+    font-size: 12rem;
+  }
+  @include respond-below(md){
+    font-size: 7rem;
+  }
 }
 
 @mixin main-hero {
-  margin-top: 10rem;
+  margin-top: var(--margin-top-content);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   
+}
+
+@mixin z-index($name) {
+  z-index: map-get($z-index, $name);
+  @if not $name {
+    @warn 'Invalid z-index name: #{$name}.';
+  }
 }

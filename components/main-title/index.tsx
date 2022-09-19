@@ -2,7 +2,10 @@ import React from 'react'
 import s from './styles.module.scss'
 import cn from 'classnames'
 import { motion, AnimatePresence } from 'framer-motion'
+import { parseMainTitle } from '../../utils/index'
+import { IMainTitleLetter } from '@interfaces'
 
+console.log(parseMainTitle)
 export type IProps = {
   title: string
 }
@@ -11,14 +14,14 @@ const titleVariants = {
   enter: {
     transition: {
       staggerChildren: 0.1,
-      delayChildren: .3,
+      delayChildren: 0.3,
     },
   },
   exit: {
     transition: {
       staggerChildren: 0.1,
       staggerDirection: -1,
-      delayChildren: .3,
+      delayChildren: 0.3,
     },
   },
 }
@@ -27,7 +30,7 @@ const letterVariants = {
   exit: {
     transform: `translate3d(0px, 150%, 0px) rotate(0deg)`,
     transition: {
-      duration: .8,
+      duration: 0.8,
       ease: 'easeOut',
     },
   },
@@ -37,45 +40,32 @@ const letterVariants = {
   enter: {
     transform: `translate3d(0px, 0px, 0px) rotate(0deg)`,
     transition: {
-      duration: .8,
+      duration: 0.8,
       ease: 'easeOut',
     },
   },
 }
 export default function MainTitle({ title }: IProps) {
-  // return (
-  //   <motion.h1
-  //     key={title}
-  //     className={s.title}
-  //     exit={{
-  //       color: 'blue',
-  //       transition: {
-  //         duration: 2,
-  //         delay: 0.5,
-  //       },
-  //     }}
-  //     initial={{ color: 'red' }}
-  //     animate={{
-  //       color: 'blue',
-  //       transition: {
-  //         duration: 2,
-  //       },
-  //     }}
-  //   >
-  //     {title}
-  //   </motion.h1>
-  // )
   return (
-    <motion.h1 className={s.title} key={title}>
+    <motion.h1
+      key={`title-${title}`}
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      className={s.title}
+    >
       <div className={cn(s.italic, s.line)}>
         <motion.span className={cn(s.word)} variants={titleVariants}>
-          {title.split('').map((letter, i) => (
+          {parseMainTitle(title).map((letter: IMainTitleLetter, i: number) => (
             <motion.span
               key={`${letter}-${i}`}
-              className={s.letter}
+              className={cn(s.letter, 
+                { [s.italic]: letter.italic },
+                { [s.space]: letter.isSpace },
+                )}
               variants={letterVariants}
             >
-              {letter}
+              {letter.letter}
             </motion.span>
           ))}
         </motion.span>

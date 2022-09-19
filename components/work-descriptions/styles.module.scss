@@ -1,0 +1,52 @@
+@import '@styles/theme.scss';
+
+// Your style here
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.descriptions {
+  width: 100%;
+  margin-top: 6rem;
+  position: relative;
+  animation: fade-in 1s ease-in-out;
+  margin-bottom: 10rem;
+  @include respond-above(xxxl) {
+    margin-bottom: 20rem;
+  }
+}
+
+.description {
+  font-family: $font-roobert;
+  text-align: justify;
+  font-size: 1.8rem;
+  margin: auto;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  transition-delay: 0s;
+
+  @include respond-below(xl) {
+    font-size: 1.4rem;
+  }
+
+  @include respond-below(md) {
+    font-size: 1.2rem;
+  }
+
+  &.active {
+    transition: opacity 1s;
+    transition-delay: 1s;
+    opacity: 1;
+  }
+}
