@@ -1,8 +1,10 @@
-import React, { ReactNode } from 'react'
+import React, { useEffect } from 'react'
 import { NextSeo } from 'next-seo'
 import { AnimatePresence, motion } from 'framer-motion'
 import s from './styles.module.scss'
 import { ScrollProgress } from '@components'
+import { useRecoilValue } from 'recoil'
+import { scrollDisabledState } from '@recoil/scroll/atom'
 
 type Props = {
   children: any
@@ -15,6 +17,17 @@ export default function Layout({
   title,
   description,
 }: Props): JSX.Element {
+  const scrollDisabled = useRecoilValue(scrollDisabledState)
+
+  useEffect(() => {
+    console.log({scrollDisabled})
+    if (scrollDisabled) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [scrollDisabled])
+  
   return (
     <>
       <NextSeo

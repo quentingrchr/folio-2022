@@ -1,27 +1,27 @@
-import {
-  Nav,
-  PageWrapper,
-  ScrollProgress,
-  ThumbnailsSlider,
-  WorkDescriptions,
-} from '@components'
+import { ThumbnailsSlider, WorkDescriptions, WorkModal } from '@components'
 import { useEffect, useState, useRef, useLayoutEffect } from 'react'
 import type { NextPage } from 'next'
 import { Layout, MainTitle } from '@components'
-import Head from 'next/head'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import {
+  MODAL_WORK,
+  activeModalState,
+  modalDataState,
+} from '@recoil/modal/atom'
+import { useSetRecoilState } from 'recoil'
 import { useScroll } from 'framer-motion'
 import s from './index.module.scss'
 import { items, yearData } from './data'
 import 'swiper/css'
 import cn from 'classnames'
-import { Main } from 'next/document'
 
 const Works: NextPage = () => {
   const [activeItem, setActiveItem] = useState<number>(0)
   const [titleSwiper, setTitleSwiper] = useState<any>(null)
   const [thumbnailSwiper, setThumbnailSwiper] = useState<any>(null)
   const [scrollRange, setScrollRange] = useState(0)
+  const setActiveModal = useSetRecoilState(activeModalState)
+  console.log(setActiveModal)
 
   const { scrollY } = useScroll()
   const ghostRef = useRef<HTMLDivElement>(null)
@@ -39,14 +39,13 @@ const Works: NextPage = () => {
     const $titleContainers = document.querySelectorAll('.swiper-slide h1')
     $titleContainers.forEach(($container, i) => {
       const containerWidth = $container.getBoundingClientRect().width
-      items[i].data.width = containerWidth
+      items[i].titleWidth = containerWidth
     })
 
     // set the max description height
   }, [])
 
   useEffect(() => {
-    console.log(activeItem)
     if (titleSwiper !== null) {
       titleSwiper.slideTo(activeItem)
     }
@@ -61,9 +60,17 @@ const Works: NextPage = () => {
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
+      /* get direction */
+      const direction = latest > scrollY.getPrevious() ? 'down' : 'up'
       const divider = scrollRange / items.length
-      const index = Math.floor(latest / divider)
-      console.log(index)
+      let index = 0
+      const ratio = latest / divider
+      if (direction === 'up') {
+        index = Math.floor(ratio)
+      } else {
+        index = Math.ceil(ratio)
+      }
+
       setActiveItem(index)
     })
   }, [scrollRange])
@@ -78,7 +85,9 @@ const Works: NextPage = () => {
   return (
     <>
       <Layout title="My Works" description="desc">
-        {/* <div className={s.container}> */}
+        {items.map((item, index) => {
+          return <WorkModal key={item.id} item={item} />
+        })}
         <div className={s.scrollContainer}>
           <div className={s.content}>
             <div className={s.titles}>
@@ -108,11 +117,14 @@ const Works: NextPage = () => {
               activeItem={activeItem}
               yearData={yearData}
               setThumbnailSwiper={setThumbnailSwiper}
+              onItemClick={(index, id ) => {
+                scrollToItem(index)
+                setActiveModal(`${MODAL_WORK}__${id}`)
+              }}
             />
           </div>
         </div>
         <div ref={ghostRef} style={{ height: scrollRange }} className="ghost" />
-        {/* </div> */}
       </Layout>
     </>
   )

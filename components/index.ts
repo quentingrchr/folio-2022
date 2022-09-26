@@ -17,6 +17,9 @@ import MainTitle from './main-title'
 import WorkDescriptions from './work-descriptions'
 import ScrollProgress from './scroll-progress'
 import ThumbnailsSlider from './thumbnails-slider'
+import WorkModal from './work-modal'
+import Modal from './modal'
+import CloseButton from './close-button'
 
 
 export {
@@ -33,5 +36,8 @@ export {
     MainTitle,
     WorkDescriptions,
     ScrollProgress,
-    ThumbnailsSlider
+    ThumbnailsSlider,
+    WorkModal,
+    Modal,
+    CloseButton
 }

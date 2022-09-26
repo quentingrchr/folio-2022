@@ -3,12 +3,14 @@ import s from './styles.module.scss'
 import cn from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { motion } from 'framer-motion'
+import { IWorkItem } from '@interfaces'
 
 export type IProps = {
   activeItem: number
   yearData: any
   items: any
   setThumbnailSwiper: any
+  onItemClick: (index: number, id: number) => void
 }
 
 const Year = ({ year }: { year: number | null }) => {
@@ -25,7 +27,7 @@ export default function ThumbnailsSlider({
   yearData,
   items,
   setThumbnailSwiper,
-
+  onItemClick,
 }: IProps) {
   return (
     <motion.div
@@ -79,34 +81,33 @@ export default function ThumbnailsSlider({
           allowTouchMove={false}
           slidesPerView={'auto'}
           wrapperClass={s.thumbnailsWrapper}
-          // slidesPerView={3.5}
           centeredSlides={true}
         >
-          {items.map((item, index) => {
-            if (index === 0) return null
+          {items.map((item: IWorkItem, index: number) => {
+            if (index === 0 || !item.data) return null
             const year = item.data.year as number
             const prinYear = yearData[year][0] === item.id
             return (
-              <>
-                <SwiperSlide key={index} className={s.thumbnailSlide}>
-                  <div
-                    className={cn(s.thumbnailSlideContent, {
-                      [s.hasYear]: prinYear,
-                    })}
-                  >
-                    <Year year={prinYear ? year : null} />
-                    <div className={s.thumbnailContainer}>
-                      <img
-                        className={cn(s.thumbnail, {
-                          [s.active]: activeItem === index,
-                        })}
-                        src={item.data?.image.src}
-                        alt=""
-                      />
-                    </div>
+              <SwiperSlide key={index} className={s.thumbnailSlide}>
+                <div
+                  key={index}
+                  className={cn(s.thumbnailSlideContent, {
+                    [s.hasYear]: prinYear,
+                  })}
+                >
+                  <Year year={prinYear ? year : null} />
+                  <div className={s.thumbnailContainer}>
+                    <img
+                      className={cn(s.thumbnail, {
+                        [s.active]: activeItem === index,
+                      })}
+                      src={item.data?.image.src}
+                      alt=""
+                      onClick={() => onItemClick(index, item.id)}
+                    />
                   </div>
-                </SwiperSlide>
-              </>
+                </div>
+              </SwiperSlide>
             )
           })}
         </Swiper>

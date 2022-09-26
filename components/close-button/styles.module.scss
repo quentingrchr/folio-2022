@@ -1,0 +1,36 @@
+@import '@styles/theme.scss';
+
+// Your style here
+
+.btn {
+  --color: #{$color-white};
+  --bg-color: #{$color-black};
+  &:hover {
+    --color: #{$color-black};
+    --bg-color: #{$color-white};
+  }
+  background-color: var(--bg-color);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  cursor: pointer;
+  &:hover {
+    border: 2px solid var(--color);
+  }
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  svg,
+  line {
+    transition: all .3s ease;
+    fill: var(--color);
+    stroke: var(--color);
+  }
+}

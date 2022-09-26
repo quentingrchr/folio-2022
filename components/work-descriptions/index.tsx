@@ -3,9 +3,10 @@ import s from './styles.module.scss'
 import cn from 'classnames'
 import { useLayoutEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { IWorkItem } from '@interfaces'
 
 export type IProps = {
-  items: any[]
+  items: IWorkItem[]
   activeItem: number
 }
 
@@ -55,7 +56,7 @@ export default function WorkDescriptions({ items, activeItem }: IProps) {
       }}
     >
       {items.map((item: any, index: any) => {
-        if (item.data === undefined) return null
+        // if (item.data === undefined) return null
         return (
           <p
             key={index}
@@ -63,7 +64,7 @@ export default function WorkDescriptions({ items, activeItem }: IProps) {
               [s.active]: activeItem === index,
             })}
             style={{
-              width: item.data.width,
+              width: item.titleWidth,
             }}
             ref={(el) => {
               const height = el?.getBoundingClientRect().height
@@ -73,7 +74,7 @@ export default function WorkDescriptions({ items, activeItem }: IProps) {
               }
             }}
           >
-            {item.data?.description}
+            {item.description}
           </p>
         )
       })}

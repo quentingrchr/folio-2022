@@ -1,0 +1,174 @@
+@import '@styles/theme.scss';
+
+// Your style here
+
+
+
+.container {
+  width: 100%;
+  background-color: $color-white;
+  height: 100vh;
+  --padding-content: 8rem;
+  @include respond-below(xxl) {
+    --padding-content: 4rem;
+  }
+}
+
+
+.content {
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.texts,
+.image {
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 20vh;
+  box-sizing: border-box;
+  
+  @include respond-below(xxl) {
+    padding-top: 20vh;
+  }
+}
+
+.infos {
+  padding-top: 8rem;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  flex: auto;
+  max-height: 20vh;
+  margin: 0 var(--padding-content);
+}
+
+.info {
+  font-size: 1.8rem;
+  font-family: $font-roobert;
+  line-height: 1.3em;
+}
+
+.infoLabel {
+  color: rgba($color-black, 0.7);
+}
+
+.infoValue {
+}
+
+.image {
+  width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.title {
+  @include typo-title-xxl;
+  @include respond-below(xxl) {
+    font-size: 12rem;
+  }
+  font-style: italic;
+  margin: 0 var(--padding-content);
+}
+
+.description {
+  font-family: $font-roobert;
+  text-align: justify;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  line-height: 1.1em;
+  margin: 0 var(--padding-content);
+  margin-top: 7rem;
+}
+
+.details {
+  margin: 0 var(--padding-content);
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  font-family: $font-roobert;
+  line-height: 1.33em;
+  color: rgba($color-black, 0.7);
+
+}
+
+.visit {
+  margin-top: 3.8rem;
+  font-size: 1.8rem;
+  font-family: $font-roobert;
+  color: $color-black;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-left: var(--padding-content);
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color-black;
+    transform-origin: right;
+    transition: transform 0.2s;
+  }
+  &:hover {
+    &::before {
+      transform: scaleX(0);
+    }
+    .visitArrow {
+      transform: translate3d(0.3rem, -0.3rem, 0);
+    }
+  }
+}
+
+.visitArrow {
+  transition: transform 0.2s;
+  svg,
+  path {
+    stroke: $color-black;
+  }
+}
+
+
+.closeBtn{
+  position: absolute;
+  bottom: 20vh;
+  right: 50%;
+  @include z-index(modal-button);
+  transform: translate(50%, 0);
+}
+
+.imageLayer1, .imageLayer2{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  opacity: 1;
+}
+
+.imageLayer1{
+  background-color: $color-white;
+}
+
+.imageLayer2{
+  background-color: $color-black;
+}

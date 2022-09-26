@@ -1,0 +1,41 @@
+@import '@styles/theme.scss';
+
+// Your style here
+.modalContainer {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  @include z-index(modal);
+  opacity: 1;
+  pointer-events: auto;
+  @include respond-below(md) {
+    min-height: -webkit-fill-available;
+    height: -webkit-fill-available;
+  }
+}
+
+.modalOverlay {
+  background-color: rgba($color: $color-black, $alpha: 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 501;
+}
+
+.modalWrapper {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  z-index: 502;
+  @include respond-below(sm) {
+    width: 100%;
+  }
+}
