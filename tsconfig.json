@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -14,30 +18,78 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "./",
+    "checkJs": false,
     "paths": {
-      "@components/*": ["components/*"],
-      "@components": ["components"],
-      "@styles/*": ["styles/*"],
-      "@styles": ["styles"],
-      "@public/*": ["public/*"],
-      "@public": ["public"],
-      "@interfaces": ["interfaces"],
-      "@interfaces/*": ["interfaces/*"],
-      "@types/*": ["types/*"],
-      "@types": ["types"],
-      "@assets/*": ["assets/*"],
-      "@utils/*": ["utils/*"],
-      "@data/*": ["data/*"],
-      "@hooks": ["hooks"],
-      "@hooks/*": ["hooks/*"],
-      "@recoil/*": ["recoil/*"],
-      "@recoil": ["recoil"],
-      "@config/*": ["config/*"],
-      "@context/": ["context/"],
-      "@context/*": ["context/*"]
+      "@components/*": [
+        "components/*"
+      ],
+      "@components": [
+        "components"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@styles": [
+        "styles"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@public": [
+        "public"
+      ],
+      "@interfaces": [
+        "interfaces"
+      ],
+      "@interfaces/*": [
+        "interfaces/*"
+      ],
+      "@types/*": [
+        "types/*"
+      ],
+      "@types": [
+        "types"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@data/*": [
+        "data/*"
+      ],
+      "@hooks": [
+        "hooks"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@recoil/*": [
+        "recoil/*"
+      ],
+      "@recoil": [
+        "recoil"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@context/": [
+        "context/"
+      ],
+      "@context/*": [
+        "context/*"
+      ]
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "tools/templates/*"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "tools/templates/*"
+  ]
 }

@@ -4,8 +4,8 @@ Import and export all your interfaces here :
 */
 import IMainTitleLetter from './main-title-letter'
 import IWorkItem from './work-item'
-
-export {
+export type {
   IMainTitleLetter,
   IWorkItem
 }
+

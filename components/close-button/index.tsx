@@ -30,16 +30,16 @@ export default function CloseButton(props: IProps) {
           y1="22.2132"
           x2="23.2132"
           y2="1.00002"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
         <line
           x1="1.41421"
           y1="1"
           x2="22.6274"
           y2="22.2132"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
       </svg>
     </div>

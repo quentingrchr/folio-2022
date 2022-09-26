@@ -115,10 +115,10 @@ export default function WorksModal({ item }: IProps) {
                     <path
                       d="M13 1L1 13M13 1H6.53846M13 1V7.46154"
                       stroke="#212121"
-                      stroke-width="1.2"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.2"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 </span>

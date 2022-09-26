@@ -13,7 +13,7 @@ export type IProps = {
 const word1 = 'Quentin'
 const word2 = 'Ledevfront'
 
-export default function HomeHero({ layout, loadingPercentage }: IProps) {
+export default function HomeHero({ layout, loadingPercentage }: any) {
   return (
     <div className={cn(s.hero, { [s.dark]: layout === 'loader' })}>
       <h1 className={s.title}>

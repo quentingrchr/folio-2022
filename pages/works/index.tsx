@@ -11,7 +11,7 @@ import {
 import { useSetRecoilState } from 'recoil'
 import { useScroll } from 'framer-motion'
 import s from './index.module.scss'
-import { items, yearData } from './data'
+import { items, yearData } from '../../data/works'
 import 'swiper/css'
 import cn from 'classnames'
 
