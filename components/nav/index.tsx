@@ -38,18 +38,29 @@ export default function Nav(props: IProps) {
   const itemClass = cn(s.item, s.active)
   const router = useRouter()
   const { pathname } = router
+  const [isNavOpen, setIsNavOpen] = React.useState(false)
   return (
     <motion.nav className={cn(s.nav)}>
-      <ul className={cn(s.list)}>
+      <button
+        onClick={(e) => {
+          setIsNavOpen(!isNavOpen)
+        }}
+        className={cn(s.burger)}
+      >
+        burger
+      </button>
+      <ul className={cn(s.list, { [s.isOpen]: isNavOpen })}>
         {navData.map((item, index) => {
           return (
-            <li
-              className={cn(s.item)}
-              key={index}
-            >
+            <li className={cn(s.item)} key={index}>
               <Link href={item.href}>{item.label}</Link>
               {item.arrowBtn && <ArrowButton />}
-              {pathname === item.href && (<motion.div className={s.underline} layoutId="underline"></motion.div>)}
+              {pathname === item.href && (
+                <motion.div
+                  className={s.underline}
+                  layoutId="underline"
+                ></motion.div>
+              )}
             </li>
           )
         })}

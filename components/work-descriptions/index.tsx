@@ -4,6 +4,7 @@ import cn from 'classnames'
 import { useLayoutEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IWorkItem } from '@interfaces'
+import { useMediaQuery } from '@hooks'
 
 export type IProps = {
   items: IWorkItem[]
@@ -12,6 +13,11 @@ export type IProps = {
 
 export default function WorkDescriptions({ items, activeItem }: IProps) {
   const [maxHeight, setMaxHeight] = React.useState(0)
+  const isMobile = useMediaQuery('(max-width: 768px)')
+  const descriptionStyle = (w: number) => {return isMobile ? {} :  {
+    width: w
+  }}
+  console.log(descriptionStyle(50),'"');
 
   useLayoutEffect(() => {
     const $descriptions = document.querySelectorAll('[data-description]')
@@ -63,9 +69,7 @@ export default function WorkDescriptions({ items, activeItem }: IProps) {
             className={cn(s.description, {
               [s.active]: activeItem === index,
             })}
-            style={{
-              width: item.titleWidth,
-            }}
+            style={descriptionStyle(item.titleWidth)}
             ref={(el) => {
               const height = el?.getBoundingClientRect().height
               if (typeof height !== 'number') return

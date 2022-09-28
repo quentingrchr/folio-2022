@@ -20,11 +20,9 @@
   align-items: center;
   width: fit-content;
   margin: auto;
-}
-
-.test {
-  font-family: $font-roxborough;
-  font-size: 16rem;
+  @include respond-below(md){
+    margin-top: 3rem;
+  }
 }
 
 .content {

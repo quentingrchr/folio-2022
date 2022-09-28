@@ -58,14 +58,14 @@ export default function Modal({ id, children }: IProps) {
             open: {
               opacity: 1,
               transition: {
-                duration: 0.5,
+                duration: 0.2,
               },
             },
             close: {
               opacity: 0,
               transition: {
                 delay: 1.8,
-                duration: 0.5,
+                duration: 0.2,
               },
             },
           }}

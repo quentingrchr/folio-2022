@@ -24,7 +24,6 @@
   filter: saturate(0%);
   transition: filter 0.2s, transform 0.3s, box-shadow 0.3s;
   margin: auto;
-
   transform: scale(0.99);
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0);
 
@@ -72,6 +71,11 @@
       width: var(--base-width);
     }
   }
+  @include respond-below(sm) {
+    --base-width: 75vw;
+    flex-direction: column;
+   
+  }
 }
 
 .year {
@@ -79,4 +83,7 @@
   font-weight: 400;
   font-family: $font-roxborough;
   margin-right: 3rem;
+  @include respond-below(md) {
+   display: none;
+  }
 }

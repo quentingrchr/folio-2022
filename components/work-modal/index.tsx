@@ -9,21 +9,41 @@ import { Modal, CloseButton } from '@components'
 import { IWorkItem } from '@interfaces'
 import { MODAL_WORK, activeModalState } from '@recoil/modal/atom'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { useMediaQuery } from '@hooks'
 
 export type IProps = {
   item: IWorkItem
 }
 
-function imageLayerAnim(index: number, duration: number, delay: number) {
+function imageLayerAnim(
+  index: number,
+  duration: number,
+  delay: number,
+  isMobile: boolean
+) {
+  const mobileOverwriteOpen = isMobile
+    ? {
+        delay: index !== 0 ? delay + delay : delay,
+      }
+    : {}
+
+  const mobileOverwriteClose = isMobile
+    ? {
+        delay: index !== 0 ? delay : delay + delay,
+      }
+    : {}
   return {
     initial: {
       clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
     },
     open: {
-      clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
+      clipPath: isMobile
+        ? 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+        : 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
       transition: {
         duration: duration,
-        delay: index !== 0 ? delay + delay + 1 : delay + 1,
+        delay: index !== 0 ? delay + (delay + 0.2) : delay ,
+        ...mobileOverwriteOpen,
       },
     },
     close: {
@@ -31,6 +51,7 @@ function imageLayerAnim(index: number, duration: number, delay: number) {
       transition: {
         duration: duration,
         delay: index !== 1 ? delay + delay : delay,
+        ...mobileOverwriteClose,
       },
     },
   }
@@ -41,9 +62,19 @@ export default function WorksModal({ item }: IProps) {
   console.log({ item })
   const setActiveModal = useSetRecoilState(activeModalState)
   if (!data) return null
+  const isMobile = useMediaQuery('(max-width: 768px)')
+
   const { year, image, meta, details } = data
   return (
     <Modal id={`${MODAL_WORK}__${id}`}>
+      <motion.div
+        variants={imageLayerAnim(1, 0.6, 0.5, isMobile)}
+        className={s.imageLayer2}
+      ></motion.div>
+      <motion.div
+        variants={imageLayerAnim(0, 0.6, 0.5, isMobile)}
+        className={s.imageLayer1}
+      ></motion.div>
       <motion.div
         className={s.closeBtn}
         variants={{
@@ -53,12 +84,14 @@ export default function WorksModal({ item }: IProps) {
           open: {
             opacity: 1,
             transition: {
-              duration: 0.5,
-              delay: 1,
+              delay: 2,
             },
           },
           close: {
-            opacity: 1,
+            opacity: 0,
+            transition: {
+              delay: 2,
+            }
           },
         }}
       >
@@ -80,14 +113,14 @@ export default function WorksModal({ item }: IProps) {
                 opacity: 1,
                 transition: {
                   duration: 0.3,
-                  delay: 1,
+                  delay: isMobile ? 1.5 : 1,
                 },
               },
               close: {
                 opacity: 0,
                 transition: {
                   duration: 0.3,
-                  delay: .5,
+                  delay: 0.5,
                 },
               },
             }}
@@ -157,14 +190,6 @@ export default function WorksModal({ item }: IProps) {
               },
             }}
           >
-            <motion.div
-              variants={imageLayerAnim(1, 0.6, 0.5)}
-              className={s.imageLayer2}
-            ></motion.div>
-            <motion.div
-              variants={imageLayerAnim(0, 0.6, .5)}
-              className={s.imageLayer1}
-            ></motion.div>
             {!!image && <img src={image.src} alt="image" />}
           </motion.div>
         </div>

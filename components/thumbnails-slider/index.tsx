@@ -4,6 +4,7 @@ import cn from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { motion } from 'framer-motion'
 import { IWorkItem } from '@interfaces'
+import { useMediaQuery } from '@hooks'
 
 export type IProps = {
   activeItem: number
@@ -29,6 +30,7 @@ export default function ThumbnailsSlider({
   setThumbnailSwiper,
   onItemClick,
 }: IProps) {
+  const isMobile = useMediaQuery('(max-width: 768px)')
   return (
     <motion.div
       key={'thumbnailsContainer'}
@@ -62,10 +64,10 @@ export default function ThumbnailsSlider({
         className={s.thumbnails}
         variants={{
           blur: {
-            transform: 'translateY(50%)',
+            transform: isMobile ? 'translate(0%, 10%)' : 'translate(0%, 50%)',
           },
           focus: {
-            transform: 'translateY(0%)',
+            transform: 'translate(0%, 0%)',
           },
         }}
         transition={{

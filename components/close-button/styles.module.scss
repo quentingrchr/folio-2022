@@ -22,11 +22,18 @@
   &:hover {
     border: 2px solid var(--color);
   }
+  @include respond-below(md) {
+    padding: 1.5rem;
+  }
 }
 
 .icon {
   width: 2rem;
   height: 2rem;
+  @include respond-below(md) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
   svg,
   line {
     transition: all .3s ease;

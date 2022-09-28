@@ -20,6 +20,13 @@
   @include respond-above(xxxl) {
     margin-bottom: 20rem;
   }
+
+  @include respond-below(xl) {
+    width: 80%;
+  }
+  @include respond-below(sm) {
+    margin-bottom: 0;
+  }
 }
 
 .description {
@@ -37,12 +44,19 @@
   transition: opacity 0.2s;
   transition-delay: 0s;
 
+
+
+
   @include respond-below(xl) {
     font-size: 1.4rem;
   }
 
   @include respond-below(md) {
     font-size: 1.2rem;
+  }
+
+  @include respond-below(sm) {
+    width: 80vw;
   }
 
   &.active {
