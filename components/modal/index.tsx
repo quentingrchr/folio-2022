@@ -34,8 +34,6 @@ export default function Modal({ id, children }: IProps) {
   useEffect(() => {
     if (activeModal === id) {
       setScrollDisabled(true)
-    } else {
-      setScrollDisabled(false)
     }
   }, [activeModal])
 

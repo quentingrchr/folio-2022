@@ -2,6 +2,26 @@
 
 // Your style here
 
+.container{
+  width: fit-content;
+
+}
+
+.text{
+  top: 90%;
+  left: 1rem;
+  width: 100%;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-family: $font-roobert;
+  @include respond-below(xl){
+    font-size: 1.6rem;
+  }
+  @include respond-below(md){
+    font-size: 1.4rem;
+  }
+}
 .title {
   @include typo-title-xxl;
   display: flex;
@@ -35,4 +55,19 @@
   &.space{
     display: inline;
   }
+}
+
+.topContainer{
+  position: relative;
+}
+
+
+.botContainer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.btn {
+  flex: 1;
 }

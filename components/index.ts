@@ -20,6 +20,7 @@ import ThumbnailsSlider from './thumbnails-slider'
 import WorkModal from './work-modal'
 import Modal from './modal'
 import CloseButton from './close-button'
+import Button from './button'
 
 
 export {
@@ -39,5 +40,6 @@ export {
     ThumbnailsSlider,
     WorkModal,
     Modal,
-    CloseButton
+    CloseButton,
+    Button
 }

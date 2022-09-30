@@ -7,16 +7,15 @@ import s from './index.module.scss'
 
 import 'swiper/css'
 
-const Works: NextPage = () => {
+const About: NextPage = () => {
   return (
     <>
-      <Layout title="My Works" description="desc">
+      <Layout title="About Me" description="desc">
         <div className={s.container}>
-          <MainTitle title="[A]bout" />
+          <MainTitle title="[A]bout [M]e" />
          
         </div>
         <div className={s.container}>
-        <MainTitle title="[My] Works" />
         </div>
         {/* <div>
           <Swiper
@@ -45,4 +44,4 @@ const Works: NextPage = () => {
   )
 }
 
-export default Works
+export default About

@@ -1,0 +1,16 @@
+@import '@styles/theme.scss';
+
+.container {
+  @include main-hero;
+  flex-direction: column;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.btn {
+  flex: 1;
+}

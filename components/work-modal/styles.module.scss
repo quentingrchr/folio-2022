@@ -10,6 +10,9 @@
   @include respond-below(xxl) {
     --padding-content: 4rem;
   }
+  @include respond-below(xl) {
+    --padding-content: 2rem;
+  }
 }
 
 .content {
@@ -42,6 +45,10 @@
     padding-top: 20vh;
   }
 
+  @include respond-below(xl) {
+    padding-top: 10vh;
+  }
+
   @include respond-below(md) {
     padding-top: 0;
     align-items: center;
@@ -59,6 +66,8 @@
   flex: auto;
   max-height: 20vh;
   margin: 0 var(--padding-content);
+  margin-top: auto;
+  margin-bottom: 2rem;
   @include respond-below(md) {
     width: 80%;
   }
@@ -68,6 +77,9 @@
   font-size: 1.8rem;
   font-family: $font-roobert;
   line-height: 1.3em;
+  @include respond-below(xl) {
+    font-size: 1.6rem;
+  }
   @include respond-below(md) {
     margin-bottom: 2rem;
     font-size: 1.2rem;
@@ -112,6 +124,11 @@
   @include respond-below(xxl) {
     font-size: 12rem;
   }
+
+  @include respond-below(xl) {
+    font-size: 8rem;
+  }
+
   @include respond-below(md) {
     font-size: 7rem;
   }
@@ -135,6 +152,11 @@
   line-height: 1.1em;
   margin: 0 var(--padding-content);
   margin-top: 7rem;
+
+  @include respond-below(xl) {
+    font-size: 1.6rem;
+  }
+
   @include respond-below(md) {
     margin-top: 3rem;
     font-size: 1.4rem;
@@ -148,6 +170,9 @@
   font-family: $font-roobert;
   line-height: 1.33em;
   color: rgba($color-black, 0.7);
+  @include respond-below(xl) {
+    font-size: 1.6rem;
+  }
   @include respond-below(md) {
     font-size: 1.4rem;
   }

@@ -10,6 +10,7 @@ import { IWorkItem } from '@interfaces'
 import { MODAL_WORK, activeModalState } from '@recoil/modal/atom'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { useMediaQuery } from '@hooks'
+import { scrollDisabledState } from '@recoil/scroll/atom'
 
 export type IProps = {
   item: IWorkItem
@@ -42,7 +43,7 @@ function imageLayerAnim(
         : 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
       transition: {
         duration: duration,
-        delay: index !== 0 ? delay + (delay + 0.2) : delay ,
+        delay: index !== 0 ? delay + (delay + 0.2) : delay,
         ...mobileOverwriteOpen,
       },
     },
@@ -59,7 +60,7 @@ function imageLayerAnim(
 
 export default function WorksModal({ item }: IProps) {
   const { title, description, data, id } = item
-  console.log({ item })
+  const setScrollDisabled = useSetRecoilState(scrollDisabledState)
   const setActiveModal = useSetRecoilState(activeModalState)
   if (!data) return null
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -91,13 +92,14 @@ export default function WorksModal({ item }: IProps) {
             opacity: 0,
             transition: {
               delay: 2,
-            }
+            },
           },
         }}
       >
         <CloseButton
           onClick={() => {
             setActiveModal((s) => null)
+            setScrollDisabled(false)
           }}
         />
       </motion.div>
