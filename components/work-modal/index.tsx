@@ -129,14 +129,8 @@ export default function WorksModal({ item }: IProps) {
           >
             <motion.h1 className={s.title}>{title}</motion.h1>
             <p className={s.description}>{description}</p>
-            <p className={s.details}>
-              It is a personal project where the goal was to develop an
-              administrable e-commerce website for a potential client. I worked
-              alone on the development but I was inspired by a Wix template for
-              the models. The content of the site can be edited via a
-              back-office.
-            </p>
-            <Link href="/">
+            <p className={s.details}>{item.data?.details}</p>
+            <Link href={item.data?.url || '/'}>
               <a className={s.visit}>
                 <span className={s.visitText}>Visit website</span>
                 <span className={s.visitArrow}>
@@ -164,16 +158,16 @@ export default function WorksModal({ item }: IProps) {
               <div className={s.info}>
                 <span className={s.infoLabel}>Stack : </span>
                 <span className={s.infoValue}>
-                  Next.JS, Strapi, Vercel, AWS
+                  {item.data?.meta?.stack?.join(', ')}
                 </span>
               </div>
               <div className={s.info}>
                 <span className={s.infoLabel}>Release year : </span>
-                <span className={s.infoValue}>2022</span>
+                <span className={s.infoValue}>{item.data?.year}</span>
               </div>
               <div className={s.info}>
                 <span className={s.infoLabel}>Client : </span>
-                <span className={s.infoValue}>None</span>
+                <span className={s.infoValue}>{item.data?.meta.client}</span>
               </div>
             </div>
           </motion.div>
