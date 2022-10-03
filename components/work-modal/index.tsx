@@ -62,8 +62,8 @@ export default function WorksModal({ item }: IProps) {
   const { title, description, data, id } = item
   const setScrollDisabled = useSetRecoilState(scrollDisabledState)
   const setActiveModal = useSetRecoilState(activeModalState)
-  if (!data) return null
   const isMobile = useMediaQuery('(max-width: 768px)')
+  if (!data) return null
 
   const { year, image, meta, details } = data
   return (
