@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import IcomoonReact from 'icomoon-react'
 import iconSet from '@assets/icomoon/selection.json'
-import { Modal, CloseButton } from '@components'
+import { Modal, CloseButton, CustomLink } from '@components'
 import { IWorkItem } from '@interfaces'
 import { MODAL_WORK, activeModalState } from '@recoil/modal/atom'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
@@ -115,7 +115,7 @@ export default function WorksModal({ item }: IProps) {
                 opacity: 1,
                 transition: {
                   duration: 0.3,
-                  delay: isMobile ? 1.5 : 1,
+                  delay: isMobile ? 1.5 : 1.5,
                 },
               },
               close: {
@@ -130,30 +130,14 @@ export default function WorksModal({ item }: IProps) {
             <motion.h1 className={s.title}>{title}</motion.h1>
             <p className={s.description}>{description}</p>
             <p className={s.details}>{item.data?.details}</p>
-            <Link href={item.data?.url || '/'}>
-              <a className={s.visit}>
-                <span className={s.visitText}>Visit website</span>
-                <span className={s.visitArrow}>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13 1L1 13M13 1H6.53846M13 1V7.46154"
-                      stroke="#212121"
-                      strokeWidth="1.2"
-                      strokeMiterlimit="10"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </a>
-            </Link>
-
+            <div className={s.link}>
+              <CustomLink
+                href={item.data?.url || '/'}
+                target="_blank"
+                title="Go to this project home page"
+                label="Visit website"
+              />
+            </div>
             <div className={s.infos}>
               <div className={s.info}>
                 <span className={s.infoLabel}>Stack : </span>
@@ -186,7 +170,31 @@ export default function WorksModal({ item }: IProps) {
               },
             }}
           >
-            {!!image && <img src={image.src} alt="image" />}
+            {!!image && (
+              <motion.img
+                variants={{
+                  initial: {
+                    opacity: 0,
+                  },
+                  open: {
+                    opacity: 1,
+                    transition: {
+                      duration: 0.3,
+                      delay: isMobile ? 1.5 : 1.7,
+                    },
+                  },
+                  close: {
+                    opacity: 0,
+                    transition: {
+                      duration: 0.3,
+                      delay: 0.5,
+                    },
+                  },
+                }}
+                src={image.src}
+                alt="image"
+              />
+            )}
           </motion.div>
         </div>
       </div>

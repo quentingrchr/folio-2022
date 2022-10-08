@@ -21,25 +21,30 @@ import WorkModal from './work-modal'
 import Modal from './modal'
 import CloseButton from './close-button'
 import Button from './button'
-
+import SlidingTexts from './sliding-texts'
+import LaxImg from './lax-img'
+import CustomLink from './custom-link'
 
 export {
-    Nav,
-    HomeHero,
-    PageWrapper,
-    RotatingStar,
-    LoadingScreen,
-    StarText,
-    Counter,
-    PageTitle,
-    Layout,
-    ArrowButton,
-    MainTitle,
-    WorkDescriptions,
-    ScrollProgress,
-    ThumbnailsSlider,
-    WorkModal,
-    Modal,
-    CloseButton,
-    Button
+  Nav,
+  HomeHero,
+  PageWrapper,
+  RotatingStar,
+  LoadingScreen,
+  StarText,
+  Counter,
+  PageTitle,
+  Layout,
+  ArrowButton,
+  MainTitle,
+  WorkDescriptions,
+  ScrollProgress,
+  ThumbnailsSlider,
+  WorkModal,
+  Modal,
+  CloseButton,
+  Button,
+  SlidingTexts,
+  LaxImg,
+  CustomLink,
 }

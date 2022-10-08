@@ -4,7 +4,7 @@ $font-roobert: 'Roobert', sans-serif;
 $font-roxborough: 'RoxboroughCF', sans-serif;
 
 // colors
-$color-white: #F1F1F1;
+$color-white: #f1f1f1;
 $color-black: #000000;
 $color-dark-gray: #333333;
 
@@ -27,9 +27,7 @@ $page-x-padding: 4.2rem;
 $z-index: (
   header: 50,
   page: 40,
-  scroll-progress: 54,
-  modal: 52, 
+  scroll-progress: 51,
+  modal: 52,
   modal-button: 53,
 );
-
-

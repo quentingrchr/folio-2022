@@ -23,6 +23,13 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+  @include respond-below(md) {
+    font-size: 1.6rem;
+  }
+  &:hover {
+    transform: translateY(-0.5rem);
+  }
   &.fullWidth {
     width: 100%;
   }

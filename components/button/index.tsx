@@ -10,6 +10,8 @@ export type IProps = {
   variant?: 'primary' | 'secondary'
   hoverText?: string
   fullWidth?: boolean
+  download?: boolean
+  target?: string
 }
 
 export default function Button({
@@ -19,6 +21,7 @@ export default function Button({
   hoverText,
   variant = 'primary',
   fullWidth = false,
+  ...otherProps
 }: IProps) {
   const [isHovered, setIsHovered] = React.useState(false)
 
@@ -46,6 +49,7 @@ export default function Button({
           })}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          {...otherProps}
         >
           {!hoverText ? label : isHovered ? hoverText : label}
         </a>
@@ -60,8 +64,11 @@ export default function Button({
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        {...otherProps}
       >
-        <p className={s.label}> {!hoverText ? label : isHovered ? hoverText : label}</p>
+        <p className={s.label}>
+          {!hoverText ? label : isHovered ? hoverText : label}
+        </p>
       </div>
     )
   }

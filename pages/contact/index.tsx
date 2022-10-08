@@ -14,7 +14,7 @@ const Contact: NextPage = () => {
         <div className={s.container}>
           <MainTitle
             title="Contact [M]e"
-            text="Don’t be shy, you can reach me by email"
+            text="Let's talk about what we can make"
           >
             <div className={s.btn}>
               <Button
@@ -30,7 +30,7 @@ const Contact: NextPage = () => {
                 label="Message me on Linked In"
                 variant="secondary"
                 fullWidth
-                href='https://www.linkedin.com/in/quentin-grancher/'
+                href="https://www.linkedin.com/in/quentin-grancher/"
               />
             </div>
           </MainTitle>

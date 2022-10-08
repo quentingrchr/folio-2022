@@ -44,18 +44,16 @@
 }
 
 @mixin typo-title-xxl {
-  font-size: 16rem;
   font-weight: 400;
   font-family: $font-roxborough;
   color: var(--color-text, $color-black);
-  @media screen and (max-height: 900px) {
-    font-size: 12rem;
-  }
-  @include respond-below(md){
+  font-size: min(8vw, 19rem);
+
+  @include respond-below(md) {
     font-size: 7rem;
   }
-  
-  @include respond-below(sm){
+
+  @include respond-below(sm) {
     font-size: 5rem;
   }
 }
@@ -66,7 +64,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 @mixin z-index($name) {

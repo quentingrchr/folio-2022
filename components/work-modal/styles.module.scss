@@ -121,13 +121,13 @@
 
 .title {
   @include typo-title-xxl;
-  @include respond-below(xxl) {
-    font-size: 12rem;
-  }
+  // @include respond-below(xxl) {
+  //   font-size: 12rem;
+  // }
 
-  @include respond-below(xl) {
-    font-size: 8rem;
-  }
+  // @include respond-below(xl) {
+  //   font-size: 8rem;
+  // }
 
   @include respond-below(md) {
     font-size: 7rem;
@@ -178,51 +178,6 @@
   }
 }
 
-.visit {
-  margin-top: 3.8rem;
-  font-size: 1.8rem;
-  font-family: $font-roobert;
-  color: $color-black;
-  cursor: pointer;
-  text-decoration: none;
-  position: relative;
-  display: flex;
-  gap: 1rem;
-  padding-bottom: 1rem;
-  margin-left: var(--padding-content);
-
-  @include respond-below(md) {
-    margin-left: 0;
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: $color-black;
-    transform-origin: right;
-    transition: transform 0.2s;
-  }
-  &:hover {
-    &::before {
-      transform: scaleX(0);
-    }
-    .visitArrow {
-      transform: translate3d(0.3rem, -0.3rem, 0);
-    }
-  }
-}
-
-.visitArrow {
-  transition: transform 0.2s;
-  svg,
-  path {
-    stroke: $color-black;
-  }
-}
-
 .closeBtn {
   position: absolute;
   bottom: 20vh;
@@ -255,4 +210,17 @@
 
 .imageLayer2 {
   background-color: $color-black;
+}
+
+.link {
+  margin-top: 3.8rem;
+  margin-left: var(--padding-content);
+  font-family: $font-roobert;
+  font-size: 1.8rem;
+  a {
+    padding-bottom: 1rem;
+  }
+  @include respond-below(md) {
+    margin-left: 0;
+  }
 }

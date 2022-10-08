@@ -11,7 +11,7 @@ export type IProps = {
 }
 
 const word1 = 'Quentin'
-const word2 = 'Ledevfront'
+const word2 = 'Grancher'
 
 export default function HomeHero({ layout, loadingPercentage }: any) {
   return (
@@ -47,7 +47,10 @@ export default function HomeHero({ layout, loadingPercentage }: any) {
         </div>
         <div className={s.line}>
           <span className={s.star}>
-            <RotatingStar layout={layout} loadingPercentage={loadingPercentage} />
+            <RotatingStar
+              layout={layout}
+              loadingPercentage={loadingPercentage}
+            />
           </span>
           <motion.span
             variants={{

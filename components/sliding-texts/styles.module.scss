@@ -1,0 +1,48 @@
+@import '@styles/theme.scss';
+
+// Your style here
+
+.container {
+  width: 100%;
+  background-color: $color-white;
+  overflow: hidden;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  position: relative;
+}
+
+.wrapper {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+
+.row {
+  display: flex;
+  gap: 2.4rem;
+  white-space: nowrap;
+}
+
+.text {
+  font-family: $font-roxborough;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 6rem;
+  line-height: 140%;
+  text-align: justify;
+  @include respond-below(md) {
+    font-size: 4rem;
+  }
+}
+
+.hiddenContentContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top left;
+}
+
+.hiddenContent {
+  transform: translate(-50%, -25%);
+}

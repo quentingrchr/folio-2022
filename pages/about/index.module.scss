@@ -1,5 +1,135 @@
 @import '@styles/theme.scss';
 
-.container{
-    @include main-hero;
+.container {
+  @include main-hero;
+  display: flex;
+  flex-direction: column;
+}
+
+.firstSection {
+  width: 90%;
+  max-width: 130rem;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 5rem;
+  @include respond-below(md) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.firstSectionTitleContainer {
+  position: relative;
+  width: fit-content;
+}
+.firstSectionLine {
+  position: absolute;
+  bottom: 0;
+  right: -10%;
+  width: 35%;
+  height: 50%;
+  background-color: #ccc6c6;
+  z-index: 3;
+  transform-origin: bottom;
+}
+
+.firstSectionTitle {
+  font-size: 6.4rem;
+  font-weight: 700;
+  font-family: $font-roxborough;
+  color: $color-black;
+  overflow: hidden;
+  padding-bottom: 1rem;
+  position: relative;
+  width: fit-content;
+  z-index: 4;
+  span {
+    display: inline-block;
+  }
+  .italic {
+    font-style: italic;
+  }
+  @include respond-below(md) {
+    font-size: 4rem;
+  }
+}
+
+.firstSectionTexts {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  margin-right: 6rem;
+  flex: 1;
+  @include respond-below(md) {
+    width: 90%;
+    margin: auto;
+    gap: 4rem;
+  }
+}
+
+.firstSectionParagraph {
+  font-size: 2.4rem;
+  font-weight: 400;
+  font-family: $font-roobert;
+  color: $color-black;
+  margin-bottom: 2rem;
+  line-height: 2em;
+  text-align: justify;
+  @include respond-below(md) {
+    font-size: 1.4rem;
+  }
+  em {
+    font-style: italic;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+  // a {
+  //   text-decoration: none;
+  //   color: $color-black;
+  //   position: relative;
+  //   display: inline-block;
+  //   &::before {
+  //     content: '';
+  //     position: absolute;
+  //     bottom: 0;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 2px;
+  //     background-color: $color-black;
+  //     z-index: -1;
+  //     transition: all 0.1s ease-in-out;
+
+  //   }
+  //   &:hover {
+  //     color: $color-white;
+  //     &::before {
+  //       height: 50%;
+  //     }
+  //   }
+  // }
+}
+
+.firstSectionImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  border-radius: 4.5rem 0.5rem 4.5rem 0.5rem;
+  overflow: hidden;
+  width: auto;
+  position: relative;
+  @include respond-below(md) {
+    width: 100%;
+    border-radius: 0;
+    min-height: 50vh;
+  }
+}
+
+.button {
+  margin-bottom: 5rem;
 }

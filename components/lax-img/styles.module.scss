@@ -1,0 +1,16 @@
+@import '@styles/theme.scss';
+
+// Your style here
+
+.img {
+  width: 100%;
+  height: max(100vh, 10.8rem);
+  @include respond-above(md) {
+    height: 100rem;
+  }
+  background-position: 50% -20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100vh;
+}
