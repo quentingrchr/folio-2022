@@ -205,6 +205,14 @@ const About: NextPage = () => {
               />
             </div>
           </SlidingTexts>
+          <div className={s.mobileButton}>
+            <Button
+              label="Download my resume"
+              href="./grancher_quentin_resume.pdf"
+              download
+              target="_blank"
+            />
+          </div>
         </div>
       </Layout>
     </>

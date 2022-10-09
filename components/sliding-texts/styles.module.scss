@@ -9,6 +9,10 @@
   padding-top: 10rem;
   padding-bottom: 10rem;
   position: relative;
+  @include respond-below(md) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 }
 
 .wrapper {

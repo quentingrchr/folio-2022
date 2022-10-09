@@ -9,13 +9,10 @@ export type IProps = {
   variant?: 'loader' | 'classic'
 }
 
-
 export default function PageWrapper({ children, variant = 'classic' }: IProps) {
   return (
     <div className={cn(s.wrapper, { [s.dark]: variant === 'loader' })}>
-      <AnimatePresence>
-        {variant === 'classic' && <Nav />}
-      </AnimatePresence>
+      <AnimatePresence>{variant === 'classic' && <Nav />}</AnimatePresence>
       <div className={s.page}>{children}</div>
     </div>
   )

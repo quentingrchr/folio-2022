@@ -5,12 +5,15 @@
 .img {
   width: 100%;
   height: max(100vh, 10.8rem);
-  @include respond-above(md) {
-    height: 100rem;
-  }
-  background-position: 50% -20%;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 50% -20%;
   position: absolute;
   height: 100vh;
+  @include respond-below(md) {
+    height: 80vh;
+
+    margin-top: 50vh;
+    background-position: 50% 0%;
+  }
 }

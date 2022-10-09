@@ -3,6 +3,7 @@ import s from './styles.module.scss'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
 import { v4 as uuidv4 } from 'uuid'
+import { useMediaQuery } from '@hooks'
 
 export type IProps = {
   children: React.ReactNode
@@ -32,15 +33,16 @@ const data = [
 
 export default function SlidingTexts({ children }: IProps) {
   const [isHovered, setIsHovered] = React.useState(false)
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   const repeat = (arr: any, n: any) => Array(n).fill(arr).flat()
 
   const handleMouseEnter = (e: any) => {
-    if (isHovered) return
+    if (isHovered || isMobile) return
     setIsHovered(true)
   }
   const handleMouseLeave = (e: any) => {
-    if (!isHovered) return
+    if (!isHovered || isMobile) return
     setIsHovered(false)
   }
 
@@ -50,7 +52,6 @@ export default function SlidingTexts({ children }: IProps) {
         y: position === 'top' ? '-90%' : '90%',
         transition: {
           duration: 0.2,
-          // ease: [0.25, 0.35, 0.81, 1.35],
           type: 'spring',
           stiffness: 300,
           damping: 16,

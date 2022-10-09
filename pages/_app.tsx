@@ -6,6 +6,8 @@ import type { AppProps } from 'next/app'
 import { PageWrapper } from '@components'
 import { useRouter } from 'next/router'
 import { Nav } from '@components'
+import Router from 'next/router'
+
 import { AnimatePresence, motion } from 'framer-motion'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -52,7 +54,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             initial={true}
             onExitComplete={() => window.scrollTo(0, 0)}
           >
-              <Component {...allProps} key={router.pathname} />
+            <Component {...allProps} key={router.pathname} />
           </AnimatePresence>
         </PageWrapper>
       </RecoilRoot>
@@ -60,4 +62,21 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
+const routeChange = () => {
+  // Temporary fix to avoid flash of unstyled content
+  // during route transitions. Keep an eye on this
+  // issue and remove this code when resolved:
+  // https://github.com/vercel/next.js/issues/17464
+
+  const tempFix = () => {
+    const allStyleElems = document.querySelectorAll('style[media="x"]')
+    allStyleElems.forEach((elem) => {
+      elem.removeAttribute('media')
+    })
+  }
+  tempFix()
+}
+
+Router.events.on('routeChangeComplete', routeChange)
+Router.events.on('routeChangeStart', routeChange)
 export default MyApp
