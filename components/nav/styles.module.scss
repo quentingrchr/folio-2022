@@ -114,4 +114,6 @@
 
 .container {
   width: 100%;
+  position: fixed;
+  @include z-index(header);
 }
