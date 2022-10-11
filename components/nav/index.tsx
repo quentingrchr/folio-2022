@@ -73,6 +73,7 @@ export default function Nav(props: IProps) {
               href="https://github.com/quentingrchr"
               target="_blank"
               title="My github"
+              rel="noreferrer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
