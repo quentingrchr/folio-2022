@@ -41,6 +41,9 @@
   font-weight: 400;
   text-transform: uppercase;
   color: var(--color-text, $color-black);
+  @include respond-below(md) {
+    font-size: 2.4rem;
+  }
 }
 
 @mixin typo-title-xxl {

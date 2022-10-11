@@ -21,7 +21,6 @@ const Works: NextPage = () => {
   const [thumbnailSwiper, setThumbnailSwiper] = useState<any>(null)
   const [scrollRange, setScrollRange] = useState(0)
   const setActiveModal = useSetRecoilState(activeModalState)
-  console.log(setActiveModal)
 
   const { scrollY } = useScroll()
   const ghostRef = useRef<HTMLDivElement>(null)
@@ -117,7 +116,7 @@ const Works: NextPage = () => {
               activeItem={activeItem}
               yearData={yearData}
               setThumbnailSwiper={setThumbnailSwiper}
-              onItemClick={(index, id ) => {
+              onItemClick={(index, id) => {
                 scrollToItem(index)
                 setActiveModal(`${MODAL_WORK}__${id}`)
               }}

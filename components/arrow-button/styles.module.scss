@@ -9,7 +9,9 @@
   --offset-parallelogram: 7%;
   transform: translateY(-1rem);
   pointer-events: none;
-  
+  @include respond-below(md) {
+    display: none;
+  }
 }
 
 .wrapper {

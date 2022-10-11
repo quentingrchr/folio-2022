@@ -5,20 +5,20 @@ body {
   font-size: 10px;
   font-family: RoxboroughCF;
   background-color: $color-white;
+  --nav-height: 6.9rem;
   ::-webkit-scrollbar {
     display: none;
   }
 }
 :root {
-  --margin-top-content: min(10rem, 10vw);
-  @include respond-above(xxl){
+  --margin-top-content: 15rem;
+  @include respond-above(xxl) {
     --margin-top-content: min(25rem, 30vw);
   }
-  @include respond-above(xxxl){
+  @include respond-above(xxxl) {
     --margin-top-content: min(30rem, 40vw);
   }
-  @include respond-below(md){
-    
+  @include respond-below(md) {
     --margin-top-content: min(25vw, 15rem);
   }
 }

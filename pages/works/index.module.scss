@@ -20,7 +20,8 @@
   align-items: center;
   width: fit-content;
   margin: auto;
-  @include respond-below(md){
+  margin-top: 1rem;
+  @include respond-below(md) {
     margin-top: 3rem;
   }
 }
@@ -36,7 +37,7 @@
 .titles {
   width: 100%;
 }
-  
+
 .scrollContainer {
   height: calc(100% - var(--margin-top-content));
   width: 100%;
@@ -50,4 +51,3 @@
   padding-top: var(--margin-top-content);
   @include z-index(page);
 }
-
