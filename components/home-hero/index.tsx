@@ -90,7 +90,7 @@ export default function HomeHero({ layout, loadingPercentage }: any) {
             delay: 0.8,
           }}
         >
-          passionate about tech and beautiful desgn, I’m currently open to work
+          passionate about tech and beautiful design, I’m currently open to work
         </StarText>
       </div>
     </div>
