@@ -72,12 +72,20 @@
   bottom: -1rem;
   left: 0;
   transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .item {
   margin-left: 2rem;
   position: relative;
   text-align: center;
+  &.active {
+    .underline {
+      transform: scaleX(1);
+    }
+  }
+
   &:first-child {
     margin-left: 0;
   }

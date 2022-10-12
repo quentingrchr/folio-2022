@@ -6,7 +6,6 @@ import { parseMainTitle } from '../../utils/index'
 import { IMainTitleLetter } from '@interfaces'
 import { Button } from '@components'
 
-console.log(parseMainTitle)
 export type IProps = {
   title: string
   text?: string

@@ -25,6 +25,7 @@ import SlidingTexts from './sliding-texts'
 import LaxImg from './lax-img'
 import CustomLink from './custom-link'
 import Burger from './burger'
+import Loader from './loader'
 
 export {
   Nav,
@@ -49,4 +50,5 @@ export {
   LaxImg,
   CustomLink,
   Burger,
+  Loader,
 }

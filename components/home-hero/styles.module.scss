@@ -2,7 +2,6 @@
 
 // Your style here
 
-
 @keyframes star-fade-in {
   0% {
     transform: scale(0) rotate(0deg);
@@ -22,7 +21,6 @@
   padding-top: var(--margin-top-content);
   // border-box
   box-sizing: border-box;
-   
 }
 .title {
   @include typo-title-xxl;
@@ -52,10 +50,9 @@
   position: relative;
 }
 .word {
-  
 }
 
-.content{
+.content {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -71,9 +68,7 @@
 //   }
 // }
 
-
-
-.letter{
+.letter {
   display: inline-block;
 }
 
@@ -84,5 +79,3 @@
 .bottom {
   margin-top: -3rem;
 }
-
-

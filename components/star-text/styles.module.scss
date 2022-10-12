@@ -20,8 +20,11 @@
   text-transform: uppercase;
 }
 
-.star{
-    svg,path{
-        fill: var(--text-color, #{$color-black});
-    }
+.star {
+  position: relative;
+  @include z-index(star);
+  svg,
+  path {
+    fill: var(--text-color, #{$color-black});
+  }
 }

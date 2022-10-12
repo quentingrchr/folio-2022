@@ -24,7 +24,6 @@ export default function Layout({
   const scrollDisabled = useRecoilValue(scrollDisabledState)
 
   useEffect(() => {
-    console.log({ scrollDisabled })
     if (scrollDisabled) {
       document.body.style.overflow = 'hidden'
     } else {

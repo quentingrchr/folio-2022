@@ -64,15 +64,14 @@ export default function Nav(props: IProps) {
           <ul className={cn(s.list)}>
             {navData.map((item, index) => {
               return (
-                <li className={cn(s.item)} key={index}>
+                <li
+                  className={cn(s.item, { [s.active]: pathname === item.href })}
+                  key={index}
+                >
                   <Link href={item.href}>{item.label}</Link>
-                  {item.arrowBtn && <ArrowButton />}
-                  {pathname === item.href && (
-                    <motion.div
-                      className={s.underline}
-                      layoutId="underline"
-                    ></motion.div>
-                  )}
+                  {item.arrowBtn && pathname === '/' && <ArrowButton />}
+
+                  <motion.div className={s.underline}></motion.div>
                 </li>
               )
             })}

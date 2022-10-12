@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import { HomeHero, PageWrapper } from '@components'
+import { HomeHero, Loader, PageWrapper } from '@components'
 import { motion } from 'framer-motion'
 import Layout from '@components/layout'
 
@@ -16,6 +16,15 @@ const Home: NextPage<IProps> = ({ loading, percentage }) => {
   return (
     <>
       <Layout title="Web Developper">
+        <Head>
+          <link rel="preload" as="image" href="/imgs/gr-cover.webp"></link>
+          <link rel="preload" as="image" href="/imgs/kangou-cover.webp"></link>
+          <link rel="preload" as="image" href="/imgs/magic-cover.webp"></link>
+          <link rel="preload" as="image" href="/imgs/simply-cover.webp"></link>
+          <link rel="preload" as="image" href="/imgs/vdo-cover.webp"></link>
+          <link rel="preload" as="image" href="/imgs/me.jpg"></link>
+        </Head>
+        <Loader active={loading} />
         <MotionHomeHero
           initial={'loading'}
           animate={loading ? 'loading' : 'loaded'}

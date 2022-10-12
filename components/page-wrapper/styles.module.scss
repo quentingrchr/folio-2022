@@ -16,7 +16,7 @@
   justify-content: center;
 
   &.dark {
-    --bg-color: #{$color-dark-gray};
+    // --bg-color: #{$color-dark-gray};
     --text-color: #{$color-white};
   }
 }

@@ -17,7 +17,7 @@ export const items: IWorkItem[] = [
       details:
         'It is a personal project where the goal was to develop an administrable e-commerce website for a potential client. I worked alone on the development but I was inspired by a Wix template for the models. The content of the site can be edited via a back-office.',
       image: {
-        src: '/imgs/simply-cover.png',
+        src: '/imgs/simply-cover.webp',
       },
       meta: {
         stack: ['React', 'Next.js', 'Strapi', 'Sass'],
@@ -34,7 +34,7 @@ export const items: IWorkItem[] = [
       year: 2022,
       url: 'https://vdo.ultranoir.com/',
       image: {
-        src: '/imgs/vdo-cover.png',
+        src: '/imgs/vdo-cover.webp',
       },
       details:
         "A project created from a wordpress starter named 'Presspack'. Polished designs and animations, in a complete site including a blog, several languages, and a lot of additional sections. This is a team project done at ultranoir where I worked as a developer. The content of the site can be edited via a back-office.",
@@ -54,7 +54,7 @@ export const items: IWorkItem[] = [
       year: 2021,
       url: 'https://magic-ball-of-excuses.vercel.app',
       image: {
-        src: '/imgs/magic-cover.png',
+        src: '/imgs/magic-cover.webp',
       },
       details:
         'A website to never hang out with friends again and get out of anything with varying levels of success. This is a personal project heavily inspired by a design found on dribble by Michael Crawford. I recreated his design and tried to bring it to life in a website.',
@@ -74,7 +74,7 @@ export const items: IWorkItem[] = [
       url: 'https://golden-record-webdoc.netlify.app',
       year: 2021,
       image: {
-        src: '/imgs/gr-cover.png',
+        src: '/imgs/gr-cover.webp',
       },
       details:
         'This a school projet I’ve done at HETIC with a small group. The goal was to created a web documentary on a topic of our choosing. We chose to showcase the story of the Golden Record, the most ambitious message sent into space. A gold-platted disk supposed to gives a better chance for future extraterrestrial intelligence life visitors to find out that we exist or once existed.',
@@ -93,7 +93,7 @@ export const items: IWorkItem[] = [
       url: 'https://kangou-fire.vercel.app/',
       year: 2020,
       image: {
-        src: '/imgs/kangou-cover.png',
+        src: '/imgs/kangou-cover.webp',
       },
       details:
         "This is a school project, the goal was to create a web game based on the theme of the year, which was 'Before, after'. We designed and developed a maze game based around the fact that the player can swap between environments. You're playing a kangourou in Australia forest, and you'll have find you way to the burrow with your babies. To get to the burrow you can push rocks or you can press SPACE BAR to swap on the second environment, but be careful to not swap on fire.",

@@ -4,6 +4,7 @@
 
 .container {
   position: relative;
+  @include z-index(star);
   s.center {
   }
 }

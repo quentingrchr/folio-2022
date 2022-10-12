@@ -13,11 +13,6 @@ export default function LaxImg(props: IProps) {
     scrollYProgress.onChange((v) => setHookedYPosition(v))
   }, [scrollYProgress])
 
-  // log scroll use effect
-  React.useEffect(() => {
-    console.log(hookedYPostion * 10 - 5)
-  }, [hookedYPostion])
-
   return (
     <motion.div
       className={s.img}

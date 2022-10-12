@@ -1,0 +1,20 @@
+@import '@styles/theme.scss';
+
+// Your style here
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-dark-gray;
+  @include z-index(loader);
+  // transition: none;
+  transition: 0.3s ease all;
+
+  &:not(.active) {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

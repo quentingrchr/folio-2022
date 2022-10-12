@@ -14,17 +14,18 @@ export type IProps = {
 export default function WorkDescriptions({ items, activeItem }: IProps) {
   const [maxHeight, setMaxHeight] = React.useState(0)
   const isMobile = useMediaQuery('(max-width: 768px)')
-  const descriptionStyle = (w: number) => {return isMobile ? {} :  {
-    width: w
-  }}
-  console.log(descriptionStyle(50),'"');
+  const descriptionStyle = (w: number) => {
+    return isMobile
+      ? {}
+      : {
+          width: w,
+        }
+  }
 
   useLayoutEffect(() => {
     const $descriptions = document.querySelectorAll('[data-description]')
-    console.log($descriptions)
     $descriptions.forEach(($description) => {
       const height = $description.getBoundingClientRect().height
-      console.log(height)
       if (height > maxHeight) {
         setMaxHeight(height)
       }
