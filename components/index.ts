@@ -24,6 +24,7 @@ import Button from './button'
 import SlidingTexts from './sliding-texts'
 import LaxImg from './lax-img'
 import CustomLink from './custom-link'
+import Burger from './burger'
 
 export {
   Nav,
@@ -47,4 +48,5 @@ export {
   SlidingTexts,
   LaxImg,
   CustomLink,
+  Burger,
 }

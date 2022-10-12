@@ -15,7 +15,7 @@ interface IProps {
 const Home: NextPage<IProps> = ({ loading, percentage }) => {
   return (
     <>
-      <Layout title="Quentin - Folio 22" description="desc">
+      <Layout title="Web Developper">
         <MotionHomeHero
           initial={'loading'}
           animate={loading ? 'loading' : 'loaded'}

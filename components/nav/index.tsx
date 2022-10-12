@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import s from './styles.module.scss'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { ArrowButton } from '..'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Burger } from '@components'
 
 export type IProps = {}
 
@@ -39,16 +40,25 @@ export default function Nav(props: IProps) {
   const router = useRouter()
   const { pathname } = router
   const [isNavOpen, setIsNavOpen] = React.useState(false)
+  useEffect(() => {
+    setIsNavOpen(false)
+  }, [pathname])
+
   return (
     <>
-      <button
+      <div
         onClick={(e) => {
           setIsNavOpen(!isNavOpen)
         }}
         className={cn(s.burger)}
       >
-        burger
-      </button>
+        <Burger
+          isOpen={isNavOpen}
+          onClick={() => {
+            setIsNavOpen(!isNavOpen)
+          }}
+        />
+      </div>
       <div className={s.container}>
         <motion.nav className={cn(s.nav, { [s.open]: isNavOpen })}>
           <ul className={cn(s.list)}>

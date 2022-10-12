@@ -10,7 +10,7 @@ import 'swiper/css'
 const Contact: NextPage = () => {
   return (
     <>
-      <Layout title="Contact me" description="desc">
+      <Layout title="Contact Me">
         <div className={s.container}>
           <MainTitle
             title="Contact [M]e"
@@ -34,18 +34,6 @@ const Contact: NextPage = () => {
               />
             </div>
           </MainTitle>
-          {/* <div className={s.btnContainer}>
-            <div className={s.btn}>
-              <Button label="Send me an email" hoverText='q.grancher@gmail.com' fullWidth />
-            </div>
-            <div className={s.btn}>
-              <Button
-                label="Message me on Linked In"
-                variant="secondary"
-                fullWidth
-              />
-            </div>
-          </div> */}
         </div>
 
         {/* <div>

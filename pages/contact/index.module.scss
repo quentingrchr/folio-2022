@@ -9,8 +9,15 @@
   display: flex;
   gap: 2rem;
   margin-top: 4rem;
+  @include respond-below(md) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 .btn {
   flex: 1;
+  @include respond-below(md) {
+    width: 100%;
+  }
 }

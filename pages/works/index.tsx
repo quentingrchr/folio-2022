@@ -83,7 +83,7 @@ const Works: NextPage = () => {
 
   return (
     <>
-      <Layout title="My Works" description="desc">
+      <Layout title="My Works">
         {items.map((item, index) => {
           return <WorkModal key={item.id} item={item} />
         })}

@@ -41,6 +41,9 @@
   display: none;
   position: fixed;
   @include z-index(burger);
+  background-color: red;
+  right: 5vw;
+  top: 2.5rem;
 
   @include respond-below(md) {
     display: block;

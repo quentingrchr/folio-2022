@@ -59,7 +59,7 @@ export const Description = () => {
 const About: NextPage = () => {
   return (
     <>
-      <Layout title="About Me" description="desc">
+      <Layout title="About Me">
         <div className={s.container}>
           <MainTitle title="[A]bout [M]e" />
         </div>
