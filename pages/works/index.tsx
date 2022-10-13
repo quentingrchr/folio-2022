@@ -64,11 +64,13 @@ const Works: NextPage = () => {
       const divider = scrollRange / items.length
       let index = 0
       const ratio = latest / divider
+
       if (direction === 'up') {
         index = Math.floor(ratio)
       } else {
         index = Math.ceil(ratio)
       }
+      if (index > items.length - 1) return
 
       setActiveItem(index)
     })

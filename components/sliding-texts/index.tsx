@@ -36,7 +36,6 @@ const data = [
 export default function SlidingTexts({ children }: IProps) {
   const [isHovered, setIsHovered] = React.useState(false)
   const isMobile = useRecoilValue(isMobileState)
-
   const repeat = (arr: any, n: any) => Array(n).fill(arr).flat()
 
   const handleMouseEnter = (e: any) => {
