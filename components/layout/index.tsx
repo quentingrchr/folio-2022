@@ -16,7 +16,7 @@ type Props = {
 }
 
 const defaultDescription =
-  'A web developper from paris, passionate about tech and beautiful design.'
+  'A web developer from paris, passionate about tech and beautiful design.'
 
 export default function Layout({
   children,
