@@ -9,6 +9,17 @@
   }
 }
 
+.thinStar {
+  svg {
+    height: 13rem;
+    width: 13rem;
+    @include respond-below(xl) {
+      height: 8rem;
+      width: 8rem;
+    }
+  }
+}
+
 .thinStarA {
   position: static;
   transform-origin: center;

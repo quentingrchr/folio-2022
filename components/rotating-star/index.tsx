@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { Counter } from '@components'
 
 export type IProps = {
-  loadingPercentage: number  
+  loadingPercentage: number
   layout: 'home' | 'loader'
 }
 
@@ -26,12 +26,12 @@ const starVariants = {
       transition: {
         delay: 0.2,
         duration: 1,
-      }
+      },
     }
   },
 }
 
-const counterVariants  = {
+const counterVariants = {
   loading: {
     opacity: 1,
   },
@@ -40,10 +40,7 @@ const counterVariants  = {
   },
 }
 
-export default function RotatingStar({
-  loadingPercentage,
-  layout,
-}: IProps) {
+export default function RotatingStar({ loadingPercentage, layout }: IProps) {
   const transformOffset = useRef({
     x: null as number | null,
     y: null as number | null,
@@ -82,13 +79,13 @@ export default function RotatingStar({
       <motion.span
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
-        transition={{ delay: 0.5}}
+        transition={{ delay: 0.5 }}
         className={cn(s.thinStar, s.thinStarA)}
       >
-        <IcomoonReact icon={'thin-star-a'} size={130} iconSet={iconSet} />
+        <IcomoonReact icon={'thin-star-a'} iconSet={iconSet} />
       </motion.span>
       <motion.span className={cn(s.thinStar, s.thinStarB)}>
-        <IcomoonReact icon={'thin-star-b'} size={130} iconSet={iconSet} />
+        <IcomoonReact icon={'thin-star-b'} iconSet={iconSet} />
       </motion.span>
     </motion.div>
   )

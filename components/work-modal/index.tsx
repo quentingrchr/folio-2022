@@ -9,7 +9,7 @@ import { Modal, CloseButton, CustomLink } from '@components'
 import { IWorkItem } from '@interfaces'
 import { MODAL_WORK, activeModalState } from '@recoil/modal/atom'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
-import { useMediaQuery } from '@hooks'
+import { isMobileState } from '@recoil/layout/atom'
 import { scrollDisabledState } from '@recoil/scroll/atom'
 
 export type IProps = {
@@ -62,7 +62,7 @@ export default function WorksModal({ item }: IProps) {
   const { title, description, data, id } = item
   const setScrollDisabled = useSetRecoilState(scrollDisabledState)
   const setActiveModal = useSetRecoilState(activeModalState)
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  const isMobile = useRecoilValue(isMobileState)
   if (!data) return null
 
   const { year, image, meta, details } = data
@@ -142,7 +142,7 @@ export default function WorksModal({ item }: IProps) {
               <div className={s.info}>
                 <span className={s.infoLabel}>Stack : </span>
                 <span className={s.infoValue}>
-                  {item.data?.meta?.stack?.join(', ')}
+                  {item.data?.meta?.stack?.join(' / ')}
                 </span>
               </div>
               <div className={s.info}>

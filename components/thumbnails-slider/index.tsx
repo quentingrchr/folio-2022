@@ -4,7 +4,8 @@ import cn from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { motion } from 'framer-motion'
 import { IWorkItem } from '@interfaces'
-import { useMediaQuery } from '@hooks'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { isMobileState } from '@recoil/layout/atom'
 
 export type IProps = {
   activeItem: number
@@ -30,7 +31,8 @@ export default function ThumbnailsSlider({
   setThumbnailSwiper,
   onItemClick,
 }: IProps) {
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  const isMobile = useRecoilValue(isMobileState)
+
   return (
     <motion.div
       key={'thumbnailsContainer'}

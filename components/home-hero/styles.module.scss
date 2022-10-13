@@ -21,6 +21,9 @@
   padding-top: var(--margin-top-content);
   // border-box
   box-sizing: border-box;
+  @include respond-below(md) {
+    justify-content: space-around;
+  }
 }
 .title {
   @include typo-title-xxl;
@@ -52,6 +55,13 @@
 .word {
 }
 
+.bottomLine {
+  @include respond-below(md) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
 .content {
   display: flex;
   width: 100%;
@@ -59,6 +69,11 @@
   align-items: flex-start;
   max-width: 1000px;
   margin-bottom: 10rem;
+  @include respond-below(md) {
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+  }
 }
 
 /* sass for loop */
@@ -78,4 +93,7 @@
 }
 .bottom {
   margin-top: -3rem;
+  @include respond-below(md) {
+    margin-top: 0;
+  }
 }

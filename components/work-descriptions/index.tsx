@@ -4,7 +4,8 @@ import cn from 'classnames'
 import { useLayoutEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IWorkItem } from '@interfaces'
-import { useMediaQuery } from '@hooks'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { isMobileState } from '@recoil/layout/atom'
 
 export type IProps = {
   items: IWorkItem[]
@@ -13,7 +14,8 @@ export type IProps = {
 
 export default function WorkDescriptions({ items, activeItem }: IProps) {
   const [maxHeight, setMaxHeight] = React.useState(0)
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  const isMobile = useRecoilValue(isMobileState)
+
   const descriptionStyle = (w: number) => {
     return isMobile
       ? {}

@@ -4,6 +4,8 @@ import cn from 'classnames'
 import { motion } from 'framer-motion'
 import { v4 as uuidv4 } from 'uuid'
 import { useMediaQuery } from '@hooks'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { isMobileState } from '@recoil/layout/atom'
 
 export type IProps = {
   children: React.ReactNode
@@ -33,7 +35,7 @@ const data = [
 
 export default function SlidingTexts({ children }: IProps) {
   const [isHovered, setIsHovered] = React.useState(false)
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  const isMobile = useRecoilValue(isMobileState)
 
   const repeat = (arr: any, n: any) => Array(n).fill(arr).flat()
 

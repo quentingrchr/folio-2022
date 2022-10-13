@@ -4,6 +4,8 @@ import cn from 'classnames'
 import IcomoonReact, { iconList } from 'icomoon-react'
 import { RotatingStar, StarText } from '@components'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { isMobileState } from '@recoil/layout/atom'
 
 export type IProps = {
   layout: 'loader' | 'home'
@@ -14,6 +16,10 @@ const word1 = 'Quentin'
 const word2 = 'Grancher'
 
 export default function HomeHero({ layout, loadingPercentage }: any) {
+  const isMobile = useRecoilValue(isMobileState)
+
+  console.log('isMobile: ' + isMobile)
+
   return (
     <div className={cn(s.hero, { [s.dark]: layout === 'loader' })}>
       <h1 className={s.title}>
@@ -45,7 +51,7 @@ export default function HomeHero({ layout, loadingPercentage }: any) {
             ))}
           </span>
         </div>
-        <div className={s.line}>
+        <div className={cn(s.line, s.bottomLine)}>
           <span className={s.star}>
             <RotatingStar
               layout={layout}
@@ -78,20 +84,34 @@ export default function HomeHero({ layout, loadingPercentage }: any) {
         </div>
       </h1>
       <div className={s.content}>
-        <StarText
-          transition={{
-            delay: 0.6,
-          }}
-        >
-          Quentin grancher a web developper from paris
-        </StarText>
-        <StarText
-          transition={{
-            delay: 0.8,
-          }}
-        >
-          passionate about tech and beautiful design, I’m currently open to work
-        </StarText>
+        {!isMobile ? (
+          <>
+            <StarText
+              transition={{
+                delay: 0.6,
+              }}
+            >
+              Quentin grancher a web developer from paris
+            </StarText>
+            <StarText
+              transition={{
+                delay: 0.8,
+              }}
+            >
+              passionate about tech and beautiful design, I’m currently open to
+              work
+            </StarText>
+          </>
+        ) : (
+          <StarText
+            transition={{
+              delay: 0.8,
+            }}
+          >
+            Quentin grancher a web developer from paris, passionate about tech
+            and beautiful design, I’m currently open to work
+          </StarText>
+        )}
       </div>
     </div>
   )

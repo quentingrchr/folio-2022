@@ -13,7 +13,7 @@
 
 .descriptions {
   width: 100%;
-  margin-top: 6rem;
+  margin-top: 2rem;
   position: relative;
   animation: fade-in 1s ease-in-out;
   margin-bottom: 10rem;
@@ -43,9 +43,6 @@
   opacity: 0;
   transition: opacity 0.2s;
   transition-delay: 0s;
-
-
-
 
   @include respond-below(xl) {
     font-size: 1.4rem;

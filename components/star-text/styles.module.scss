@@ -18,13 +18,25 @@
   text-align: justify;
   width: 27rem;
   text-transform: uppercase;
+  @include respond-below(md) {
+    line-height: 1.5em;
+  }
 }
 
 .star {
   position: relative;
   @include z-index(star);
+  @include respond-below(md) {
+    z-index: 50;
+  }
   svg,
   path {
     fill: var(--text-color, #{$color-black});
+    width: 4.6rem;
+    height: 4.6rem;
+    @include respond-below(md) {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
   }
 }

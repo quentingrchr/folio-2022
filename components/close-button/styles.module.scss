@@ -18,12 +18,14 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
+
   cursor: pointer;
   &:hover {
     border: 2px solid var(--color);
   }
   @include respond-below(md) {
     padding: 1.5rem;
+    height: auto;
   }
 }
 
@@ -36,7 +38,7 @@
   }
   svg,
   line {
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     fill: var(--color);
     stroke: var(--color);
   }

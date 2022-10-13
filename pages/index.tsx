@@ -15,7 +15,7 @@ interface IProps {
 const Home: NextPage<IProps> = ({ loading, percentage }) => {
   return (
     <>
-      <Layout title="Web Developper">
+      <Layout title="Web Developer">
         <Head>
           <link rel="preload" as="image" href="/imgs/gr-cover.webp"></link>
           <link rel="preload" as="image" href="/imgs/kangou-cover.webp"></link>

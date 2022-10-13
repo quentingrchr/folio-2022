@@ -3,9 +3,11 @@ import { NextSeo } from 'next-seo'
 import { AnimatePresence, motion } from 'framer-motion'
 import s from './styles.module.scss'
 import { ScrollProgress } from '@components'
-import { useRecoilValue } from 'recoil'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { isMobileState } from '@recoil/layout/atom'
 import { scrollDisabledState } from '@recoil/scroll/atom'
 import Head from 'next/head'
+import { useMediaQuery } from '@hooks'
 
 type Props = {
   children: any
@@ -22,6 +24,20 @@ export default function Layout({
   description = defaultDescription,
 }: Props): JSX.Element {
   const scrollDisabled = useRecoilValue(scrollDisabledState)
+  const setIsMobile = useSetRecoilState(isMobileState)
+  const isMobile = useRecoilValue(isMobileState)
+
+  function onResize() {
+    const newValue = window.innerWidth < 992
+    if (newValue === isMobile) return
+    setIsMobile(newValue)
+  }
+
+  useEffect(() => {
+    onResize()
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
 
   useEffect(() => {
     if (scrollDisabled) {
@@ -87,7 +103,6 @@ export default function Layout({
             content: '#ffffff',
           },
         ]}
-
         // canonical=""
       />
 
