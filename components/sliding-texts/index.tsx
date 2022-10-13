@@ -17,9 +17,10 @@ const data = [
     'Redux',
     'Next.js',
     'Framer Motion',
-    'Tailwind CSS',
+    'Strapi',
     'Nuxt.js',
     'Vue.js',
+    'Figma',
   ],
   [
     'TypeScript',
