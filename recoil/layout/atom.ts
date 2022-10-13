@@ -1,7 +1,7 @@
 import { atom } from 'recoil'
 
-type dataType = boolean | null
+type dataType = boolean
 export const isMobileState = atom({
   key: 'isMobile',
-  default: null as dataType,
+  default: false as dataType,
 })
