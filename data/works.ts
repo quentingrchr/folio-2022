@@ -13,7 +13,7 @@ export const items: IWorkItem[] = [
       'A (fake) fully editable e-commerce website for a jewelry brand, inspired by a wix template',
     data: {
       year: 2022,
-      url: 'https://simply.vercel.app/',
+      url: 'https://simply-omega.vercel.app',
       details:
         'It is a personal project where the goal was to develop an administrable e-commerce website for a potential client. I worked alone on the development but I was inspired by a Wix template for the models. The content of the site can be edited via a back-office.',
       image: {
