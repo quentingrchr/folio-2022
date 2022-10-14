@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           }
           return p
         })
-      }, 80) // 80
+      }, 20) // 80
     }
   }, [location, isHomePage])
 
