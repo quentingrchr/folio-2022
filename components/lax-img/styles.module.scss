@@ -4,12 +4,12 @@
 
 .img {
   width: 100%;
-  height: max(100vh, 10.8rem);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% -20%;
   position: absolute;
   height: 100vh;
+  height: -webkit-fill-available;
   @include respond-below(md) {
     height: 80vh;
 

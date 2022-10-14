@@ -5,7 +5,8 @@
 .wrapper {
   min-height: 100vh;
   background-color: $color-white;
-  min-height: 100vh;
+  min-height: --webkit-fill-available;
+
   transition: background-color 0.5s ease;
   --bg-color: #{$color-white};
   --text-color: #{$color-black};
@@ -25,4 +26,5 @@
   box-sizing: content-box;
   height: fit-content;
   min-height: 100vh;
+  min-height: --webkit-fill-available;
 }

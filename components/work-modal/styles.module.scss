@@ -6,6 +6,8 @@
   width: 100%;
   background-color: $color-white;
   height: 100vh;
+  height: --webkit-fill-available;
+
   --padding-content: 8rem;
   @include respond-below(xxl) {
     --padding-content: 4rem;
@@ -203,6 +205,7 @@
   opacity: 1;
   @include respond-below(md) {
     height: 100vh;
+    height: --webkit-fill-available;
   }
 }
 
