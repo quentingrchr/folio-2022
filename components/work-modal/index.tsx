@@ -192,7 +192,7 @@ export default function WorksModal({ item }: IProps) {
                   },
                 }}
                 src={image.src}
-                alt="image"
+                alt={title}
               />
             )}
           </motion.div>

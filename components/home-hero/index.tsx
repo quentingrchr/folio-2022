@@ -6,6 +6,7 @@ import { RotatingStar, StarText } from '@components'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { isMobileState } from '@recoil/layout/atom'
+import { items } from '@data/works'
 
 export type IProps = {
   layout: 'loader' | 'home'
@@ -111,6 +112,27 @@ export default function HomeHero({ layout, loadingPercentage }: any) {
           </StarText>
         )}
       </div>
+      <p className={s.searchopt}>
+        Hello there 👋 I'm Quentin Grancher, a web developer You can visit some
+        of my work here 📚 I'm feeling confortable with ReactJS, NodeJS,
+        ExpressJS, VueJS 🌱 I’m currently exploring NextJS and Strapi on an
+        E-Commerce project 📫 How to reach me: Just send me an email
+        q.grancher[at]gmail.com ⚡ Random fact: Star Wars / Marvel fan and I
+        make music sometimes
+      </p>
+      {items.map((item, i) => {
+        if (i === 0) return
+        return (
+          <article className={s.searchopt}>
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+            <p>{item.data?.details}</p>
+            <a href={item.data?.url} target="_blank" title={item.title}>
+              {item.title}
+            </a>
+          </article>
+        )
+      })}
     </div>
   )
 }

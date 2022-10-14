@@ -106,7 +106,7 @@ export default function ThumbnailsSlider({
                         [s.active]: activeItem === index,
                       })}
                       src={item.data?.image.src}
-                      alt=""
+                      alt={`thumbnail ${index}`}
                       onClick={() => onItemClick(index, item.id)}
                     />
                   </div>
