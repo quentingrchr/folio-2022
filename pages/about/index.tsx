@@ -199,7 +199,7 @@ const About: NextPage = () => {
             <div className={s.button}>
               <Button
                 label="Download my resume"
-                href="./grancher_quentin_resume.pdf"
+                href="./RESUME_QUENTIN_GRANCHER.pdf"
                 download
                 target="_blank"
               />
@@ -208,7 +208,7 @@ const About: NextPage = () => {
           <div className={s.mobileButton}>
             <Button
               label="Download my resume"
-              href="./grancher_quentin_resume.pdf"
+              href="./RESUME_QUENTIN_GRANCHER.pdf"
               download
               target="_blank"
             />
