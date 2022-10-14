@@ -25,14 +25,14 @@
   transition: filter 0.2s, transform 0.3s, box-shadow 0.3s;
   margin: auto;
   transform: scale(0.99);
-  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0);
+  @include respond-below(md) {
+    max-height: 30vh;
+  }
 
-
-  &:hover{
+  &:hover {
     transform: scale(1);
-    box-shadow:  5px 5px 10px 0px rgba(0,0,0,0.3);
-
-    
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
   }
 
   &.active {
@@ -54,11 +54,14 @@
   width: var(--base-width);
   margin-top: 2rem;
   font-size: 3.6rem;
+  @include respond-below(md) {
+    align-items: center;
+    justify-content: center;
+  }
   &.hasYear {
     width: calc(var(--base-width) + 4ch);
-    
   }
-  @include respond-above(xxxl){
+  @include respond-above(xxxl) {
     --base-width: min(40vw, 50rem);
   }
   @include respond-below(xxl) {
@@ -74,7 +77,6 @@
   @include respond-below(sm) {
     --base-width: 75vw;
     flex-direction: column;
-   
   }
 }
 
@@ -84,6 +86,6 @@
   font-family: $font-roxborough;
   margin-right: 3rem;
   @include respond-below(md) {
-   display: none;
+    display: none;
   }
 }

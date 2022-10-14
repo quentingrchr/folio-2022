@@ -18,8 +18,6 @@ const word2 = 'Grancher'
 export default function HomeHero({ layout, loadingPercentage }: any) {
   const isMobile = useRecoilValue(isMobileState)
 
-  console.log('isMobile: ' + isMobile)
-
   return (
     <div className={cn(s.hero, { [s.dark]: layout === 'loader' })}>
       <h1 className={s.title}>

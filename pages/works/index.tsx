@@ -24,7 +24,6 @@ const Works: NextPage = () => {
   const [thumbnailSwiper, setThumbnailSwiper] = useState<any>(null)
   const [scrollRange, setScrollRange] = useState(0)
   const setActiveModal = useSetRecoilState(activeModalState)
-  console.log({ isMobile })
 
   const { scrollY } = useScroll()
   const ghostRef = useRef<HTMLDivElement>(null)
@@ -80,7 +79,6 @@ const Works: NextPage = () => {
     if (thumbnailSwiper !== null) {
       thumbnailSwiper.on('slideChange', (swiper: any) => {
         const index = swiper.realIndex
-        console.log(index)
         setActiveItem(index + 1)
       })
     }
