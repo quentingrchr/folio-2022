@@ -9,7 +9,7 @@
   background-position: 50% -20%;
   position: absolute;
   height: 100vh;
-  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   @include respond-below(md) {
     height: 80vh;
 

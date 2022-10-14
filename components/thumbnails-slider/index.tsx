@@ -82,7 +82,7 @@ export default function ThumbnailsSlider({
           spaceBetween={110}
           speed={1500}
           onSwiper={(swiper) => setThumbnailSwiper(swiper)}
-          allowTouchMove={false}
+          allowTouchMove={isMobile}
           slidesPerView={'auto'}
           wrapperClass={s.thumbnailsWrapper}
           centeredSlides={true}

@@ -114,7 +114,7 @@ export default function Layout({
         className={s.main}
       >
         {children}
-        <ScrollProgress />
+        {!isMobile && <ScrollProgress />}
       </motion.main>
     </>
   )

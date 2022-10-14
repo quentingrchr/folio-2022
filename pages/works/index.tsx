@@ -8,24 +8,35 @@ import {
   activeModalState,
   modalDataState,
 } from '@recoil/modal/atom'
-import { useSetRecoilState } from 'recoil'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { useScroll } from 'framer-motion'
 import s from './index.module.scss'
 import { items, yearData } from '../../data/works'
 import 'swiper/css'
+import { isMobileState } from '@recoil/layout/atom'
+
 import cn from 'classnames'
 
 const Works: NextPage = () => {
+  const isMobile = useRecoilValue(isMobileState)
   const [activeItem, setActiveItem] = useState<number>(0)
   const [titleSwiper, setTitleSwiper] = useState<any>(null)
   const [thumbnailSwiper, setThumbnailSwiper] = useState<any>(null)
   const [scrollRange, setScrollRange] = useState(0)
   const setActiveModal = useSetRecoilState(activeModalState)
+  console.log({ isMobile })
 
   const { scrollY } = useScroll()
   const ghostRef = useRef<HTMLDivElement>(null)
 
+  useEffect(() => {
+    if (isMobile) {
+      setActiveItem(1)
+    }
+  }, [isMobile])
+
   useLayoutEffect(() => {
+    if (isMobile) return
     if (titleSwiper && titleSwiper.$wrapperEl) {
       const $wrapper = titleSwiper.$wrapperEl[0]
       const range = $wrapper.scrollWidth
@@ -46,8 +57,16 @@ const Works: NextPage = () => {
 
   useEffect(() => {
     if (titleSwiper !== null) {
-      titleSwiper.slideTo(activeItem)
+      if (isMobile) {
+        if (activeItem > 0) {
+          titleSwiper.slideTo(activeItem)
+        }
+      } else {
+        titleSwiper.slideTo(activeItem)
+      }
     }
+    if (isMobile) return
+
     if (thumbnailSwiper !== null) {
       if (activeItem === 0) {
         thumbnailSwiper.slideTo(0)
@@ -58,7 +77,18 @@ const Works: NextPage = () => {
   }, [activeItem])
 
   useEffect(() => {
+    if (thumbnailSwiper !== null) {
+      thumbnailSwiper.on('slideChange', (swiper: any) => {
+        const index = swiper.realIndex
+        console.log(index)
+        setActiveItem(index + 1)
+      })
+    }
+  }, [thumbnailSwiper])
+
+  useEffect(() => {
     return scrollY.onChange((latest) => {
+      if (isMobile) return
       /* get direction */
       const direction = latest > scrollY.getPrevious() ? 'down' : 'up'
       const divider = scrollRange / items.length
@@ -101,15 +131,17 @@ const Works: NextPage = () => {
                 className={s.swiper}
                 centeredSlides={true}
                 onSwiper={(swiper) => setTitleSwiper(swiper)}
-                allowTouchMove={false}
+                allowTouchMove={isMobile}
               >
-                {items.map((item, index) => (
-                  <SwiperSlide key={index}>
-                    <div className={cn(s.titleContainer, 'title-container')}>
-                      <MainTitle title={item.title} />
-                    </div>
-                  </SwiperSlide>
-                ))}
+                {items.map((item, index) => {
+                  return (
+                    <SwiperSlide key={index}>
+                      <div className={cn(s.titleContainer, 'title-container')}>
+                        <MainTitle title={item.title} />
+                      </div>
+                    </SwiperSlide>
+                  )
+                })}
               </Swiper>
             </div>
             <WorkDescriptions items={items} activeItem={activeItem} />
@@ -119,13 +151,18 @@ const Works: NextPage = () => {
               yearData={yearData}
               setThumbnailSwiper={setThumbnailSwiper}
               onItemClick={(index, id) => {
-                scrollToItem(index)
                 setActiveModal(`${MODAL_WORK}__${id}`)
+                if (isMobile) return
+                scrollToItem(index)
               }}
             />
           </div>
         </div>
-        <div ref={ghostRef} style={{ height: scrollRange }} className="ghost" />
+        <div
+          ref={ghostRef}
+          style={{ height: !!isMobile ? '100vh' : scrollRange }}
+          className="ghost"
+        />
       </Layout>
     </>
   )

@@ -18,9 +18,8 @@
   justify-content: space-between;
   align-items: center;
   height: 100vh;
-  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   padding-top: var(--margin-top-content);
-  // border-box
   box-sizing: border-box;
   @include respond-below(md) {
     justify-content: space-around;
