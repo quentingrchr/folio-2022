@@ -127,7 +127,7 @@ export default function WorksModal({ item }: IProps) {
               },
             }}
           >
-            <motion.h1 className={s.title}>{title}</motion.h1>
+            <motion.h3 className={s.title}>{title}</motion.h3>
             <p className={s.description}>{description}</p>
             <p className={s.details}>{item.data?.details}</p>
             <div className={s.link}>
