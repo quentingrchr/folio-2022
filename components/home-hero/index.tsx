@@ -123,11 +123,16 @@ export default function HomeHero({ layout, loadingPercentage }: any) {
       {items.map((item, i) => {
         if (i === 0) return
         return (
-          <article className={s.searchopt}>
+          <article className={s.searchopt} key={i}>
             <h2>{item.title}</h2>
             <p>{item.description}</p>
             <p>{item.data?.details}</p>
-            <a href={item.data?.url} target="_blank" title={item.title}>
+            <a
+              href={item.data?.url}
+              target="_blank"
+              rel="noreferrer"
+              title={item.title}
+            >
               {item.title}
             </a>
           </article>
