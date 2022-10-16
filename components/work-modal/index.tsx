@@ -130,14 +130,16 @@ export default function WorksModal({ item }: IProps) {
             <motion.h3 className={s.title}>{title}</motion.h3>
             <p className={s.description}>{description}</p>
             <p className={s.details}>{item.data?.details}</p>
-            <div className={s.link}>
-              <CustomLink
-                href={item.data?.url || '/'}
-                target="_blank"
-                title="Go to this project home page"
-                label="Visit website"
-              />
-            </div>
+            {!!item.data?.url && (
+              <div className={s.link}>
+                <CustomLink
+                  href={item.data?.url || '/'}
+                  target="_blank"
+                  title="Go to this project home page"
+                  label="Visit website"
+                />
+              </div>
+            )}
             <div className={s.infos}>
               <div className={s.info}>
                 <span className={s.infoLabel}>Stack : </span>

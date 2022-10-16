@@ -5,7 +5,7 @@ export default interface IWorkItem {
   titleWidth?: number
   data?: {
     year: number
-    url: string
+    url?: string
 
     image: {
       src: string

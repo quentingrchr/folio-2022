@@ -1,10 +1,9 @@
 import React from 'react'
 import s from './styles.module.scss'
 import cn from 'classnames'
-import IcomoonReact, { iconList } from 'icomoon-react'
 import { RotatingStar, StarText } from '@components'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { motion } from 'framer-motion'
+import { useRecoilValue } from 'recoil'
 import { isMobileState } from '@recoil/layout/atom'
 import { items } from '@data/works'
 
