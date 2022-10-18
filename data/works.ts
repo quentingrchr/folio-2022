@@ -32,7 +32,7 @@ export const items: IWorkItem[] = [
     description: 'Manageable luxury hotel website with a slick design',
     data: {
       year: 2022,
-      url: 'https://vdo.ultranoir.com/',
+      // url: 'https://vdo.ultranoir.com/',
       image: {
         src: '/imgs/vdo-cover.webp',
       },
