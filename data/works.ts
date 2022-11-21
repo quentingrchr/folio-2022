@@ -28,6 +28,25 @@ export const items: IWorkItem[] = [
   },
   {
     id: 3,
+    title: 'Cloudy Bay',
+    description: 'A light e-commerce website for a winery in New Zealand',
+    data: {
+      year: 2022,
+      url: 'https://www.cloudybay.com/',
+      details:
+        'This is a team project where we had to develop an editable e-commerce website. I worked with 3 other developers, and I was mainly focused on the front-end part of the website. The content of the site can be edited via a Drupal back-office.',
+      image: {
+        src: '/imgs/cloudy-bay-cover.webp',
+      },
+      meta: {
+        stack: ['Gatsby', 'Styled components', 'Drupal', 'GraphQL'],
+        releaseYear: 2022,
+        client: 'Cloudy Bay',
+      },
+    },
+  },
+  {
+    id: 4,
     title: "Voile d'Or",
     description: 'Manageable luxury hotel website with a slick design',
     data: {
@@ -46,7 +65,7 @@ export const items: IWorkItem[] = [
     },
   },
   {
-    id: 4,
+    id: 5,
     title: 'Magic Ball',
     description:
       "There's nothing quite like coming up with a random excuse and canceling plans.",
@@ -66,7 +85,7 @@ export const items: IWorkItem[] = [
     },
   },
   {
-    id: 5,
+    id: 6,
     title: 'Golden Rec.',
     description:
       'A web documentary about the mysterious Golden Record launched aboard NASA’s Voyager Spacecraft 1 and 2 in 1977',
@@ -86,7 +105,7 @@ export const items: IWorkItem[] = [
     },
   },
   {
-    id: 6,
+    id: 7,
     title: 'Kangou Fire',
     description: 'Vanilla js 2D maze game, you get to play a kangourou',
     data: {

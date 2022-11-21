@@ -141,7 +141,7 @@ export default function WorksModal({ item }: IProps) {
               </div>
             ) : (
               <div className={s.link}>
-                <p className={s.linkLabel}>Website not available right now</p>
+                <p className={s.linkLabel}>Work in progress</p>
               </div>
             )}
             <div className={s.infos}>
