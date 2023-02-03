@@ -7,6 +7,7 @@ import { PageWrapper } from '@components'
 import { useRouter } from 'next/router'
 import { Nav } from '@components'
 import Router from 'next/router'
+import { Analytics } from '@vercel/analytics/react'
 
 import { AnimatePresence, motion } from 'framer-motion'
 
@@ -58,6 +59,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </AnimatePresence>
         </PageWrapper>
       </RecoilRoot>
+      <Analytics />
     </>
   )
 }
