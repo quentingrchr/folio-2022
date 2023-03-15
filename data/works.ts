@@ -7,6 +7,25 @@ export const items: IWorkItem[] = [
       'SELECTED solo and team projects I HAVE DONE SINCE 2018, scroll to navigate',
   },
   {
+    id: 8,
+    title: 'Password Creator',
+    description: 'A small website to create a password with a few clicks',
+    data: {
+      year: 2023,
+      url: 'https://password-generator-quentingrchr.vercel.app/',
+      details:
+        'Password generator creates random passwords based on parameters you set. Like length, wether it should contains uppercased letters, symbols or numbers. Easy to use.',
+      image: {
+        src: '/imgs/password-cover.webp',
+      },
+      meta: {
+        stack: ['Svelte', 'Sass'],
+        releaseYear: 2023,
+        client: 'None',
+      },
+    },
+  },
+  {
     id: 2,
     title: 'Simply',
     description:
