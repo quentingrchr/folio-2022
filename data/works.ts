@@ -8,7 +8,7 @@ export const items: IWorkItem[] = [
   },
   {
     id: 8,
-    title: 'Password Creator',
+    title: 'Password',
     description: 'A small website to create a password with a few clicks',
     data: {
       year: 2023,
