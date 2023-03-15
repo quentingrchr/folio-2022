@@ -69,27 +69,27 @@ export default function Layout({
           {
             rel: 'apple-touch-icon',
             sizes: '180x180',
-            href: './meta/apple-touch-icon.png',
+            href: `${process.env.NEXT_PUBLIC_URL}/meta/apple-touch-icon.png`,
           },
           {
             rel: 'icon',
             type: 'image/png',
             sizes: '32x32',
-            href: './meta/favicon-32x32.png',
+            href: `${process.env.NEXT_PUBLIC_URL}/meta/favicon-32x32.png`,
           },
           {
             rel: 'icon',
             type: 'image/png',
             sizes: '16x16',
-            href: './meta/favicon-16x16.png',
+            href: `${process.env.NEXT_PUBLIC_URL}/meta/favicon-16x16.png`,
           },
           {
             rel: 'meta/manifest',
-            href: './meta/site.webmanifest',
+            href: `${process.env.NEXT_PUBLIC_URL}/meta/site.webmanifest`,
           },
           {
             rel: 'mask-icon',
-            href: './meta/safari-pinned-tab.svg',
+            href: `${process.env.NEXT_PUBLIC_URL}/meta/safari-pinned-tab.svg`,
             color: '#5bbad5',
           },
         ]}
