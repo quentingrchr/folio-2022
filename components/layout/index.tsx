@@ -26,7 +26,6 @@ export default function Layout({
   const scrollDisabled = useRecoilValue(scrollDisabledState)
   const setIsMobile = useSetRecoilState(isMobileState)
   const isMobile = useRecoilValue(isMobileState)
-)
 
   function onResize() {
     const newValue = window.innerWidth < 992
