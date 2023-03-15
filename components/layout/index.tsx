@@ -57,7 +57,7 @@ export default function Layout({
           description,
           images: [
             {
-              url: '/meta/og-image-800x800.jpg',
+              url: './meta/og-image-800x800.jpg',
               width: 800,
               height: 800,
               type: 'image/jpeg',
@@ -69,27 +69,27 @@ export default function Layout({
           {
             rel: 'apple-touch-icon',
             sizes: '180x180',
-            href: '/meta/apple-touch-icon.png',
+            href: './meta/apple-touch-icon.png',
           },
           {
             rel: 'icon',
             type: 'image/png',
             sizes: '32x32',
-            href: '/meta/favicon-32x32.png',
+            href: './meta/favicon-32x32.png',
           },
           {
             rel: 'icon',
             type: 'image/png',
             sizes: '16x16',
-            href: '/meta/favicon-16x16.png',
+            href: './meta/favicon-16x16.png',
           },
           {
             rel: 'meta/manifest',
-            href: '/meta/site.webmanifest',
+            href: './meta/site.webmanifest',
           },
           {
             rel: 'mask-icon',
-            href: '/meta/safari-pinned-tab.svg',
+            href: './meta/safari-pinned-tab.svg',
             color: '#5bbad5',
           },
         ]}
