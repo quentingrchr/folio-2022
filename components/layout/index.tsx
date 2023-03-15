@@ -58,7 +58,7 @@ export default function Layout({
           description,
           images: [
             {
-              url: `${process.env.PUBLIC_URL}/meta/og-image-800x800.jpg`,
+              url: `${process.env.NEXT_PUBLIC_URL}/meta/og-image-800x800.jpg`,
               width: 800,
               height: 800,
               type: 'image/jpeg',
