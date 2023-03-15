@@ -26,7 +26,7 @@ export default function Layout({
   const scrollDisabled = useRecoilValue(scrollDisabledState)
   const setIsMobile = useSetRecoilState(isMobileState)
   const isMobile = useRecoilValue(isMobileState)
-  console.log(process.env.PUBLIC_URL)
+)
 
   function onResize() {
     const newValue = window.innerWidth < 992
@@ -58,7 +58,7 @@ export default function Layout({
           description,
           images: [
             {
-              url: './meta/og-image-800x800.jpg',
+              url: `${process.env.PUBLIC_URL}/meta/og-image-800x800.jpg`,
               width: 800,
               height: 800,
               type: 'image/jpeg',
