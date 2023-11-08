@@ -66,11 +66,11 @@ export const items: IWorkItem[] = [
   },
   {
     id: 4,
-    title: "Voile d'Or",
+    title: "The Collection",
     description: 'Manageable luxury hotel website with a slick design',
     data: {
       year: 2022,
-      // url: 'https://vdo.ultranoir.com/',
+      url: 'https://the-c.com/fr/',
       image: {
         src: '/imgs/vdo-cover.webp',
       },
@@ -79,7 +79,7 @@ export const items: IWorkItem[] = [
       meta: {
         stack: ['Wordpress', 'PHP', 'Sass', 'JavaScript'],
         releaseYear: 2022,
-        client: "Voile d'or",
+        client: "The Collection",
       },
     },
   },
