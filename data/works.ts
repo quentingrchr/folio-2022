@@ -27,24 +27,42 @@ export const items: IWorkItem[] = [
   },
   {
     id: 2,
-    title: 'Simply',
-    description:
-      'A (fake) fully editable e-commerce website for a jewelry brand, inspired by a wix template',
+    title: 'Harmonique',
+    description: 'A Web application to search, find and filter songs by music key/bpm in a spotify playlist',
     data: {
-      year: 2022,
-      url: 'https://simply-omega.vercel.app',
-      details:
-        'It is a personal project where the goal was to develop an administrable e-commerce website for a potential client. I worked alone on the development but I was inspired by a Wix template for the models. The content of the site can be edited via a back-office.',
+      year: 2024,
+      url: 'https://harmonique.vercel.app',
+      details: "It's a personal project where the goal was to utilize Spotify's API. I created the application from scratch",
       image: {
-        src: '/imgs/simply-cover.webp',
-      },
+        src: '/imgs/harmonique.webp',
+      }, 
       meta: {
-        stack: ['React', 'Next.js', 'Strapi', 'Sass'],
-        releaseYear: 2021,
-        client: 'None',
-      },
-    },
+        stack: ['React', 'Next.js'],
+        releaseYear: 2024,
+        client: "None",
+      }
+    }
   },
+  // {
+  //   id: 2,
+  //   title: 'Simply',
+  //   description:
+  //     'A (fake) fully editable e-commerce website for a jewelry brand, inspired by a wix template',
+  //   data: {
+  //     year: 2022,
+  //     url: 'https://simply-omega.vercel.app',
+  //     details:
+  //       'It is a personal project where the goal was to develop an administrable e-commerce website for a potential client. I worked alone on the development but I was inspired by a Wix template for the models. The content of the site can be edited via a back-office.',
+  //     image: {
+  //       src: '/imgs/simply-cover.webp',
+  //     },
+  //     meta: {
+  //       stack: ['React', 'Next.js', 'Strapi', 'Sass'],
+  //       releaseYear: 2021,
+  //       client: 'None',
+  //     },
+  //   },
+  // },
   {
     id: 3,
     title: 'Cloudy Bay',
