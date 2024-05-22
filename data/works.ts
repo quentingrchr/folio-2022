@@ -34,7 +34,7 @@ export const items: IWorkItem[] = [
       url: 'https://harmonique.vercel.app',
       details: "It's a personal project where the goal was to utilize Spotify's API. I created the application from scratch",
       image: {
-        src: '/imgs/harmonique.webp',
+        src: '/imgs/harmonique-cover.webp',
       }, 
       meta: {
         stack: ['React', 'Next.js'],
