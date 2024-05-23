@@ -7,6 +7,24 @@ export const items: IWorkItem[] = [
       'SELECTED solo and team projects I HAVE DONE SINCE 2018, scroll to navigate',
   },
   {
+    id: 2,
+    title: 'Harmonique',
+    description: 'A Web application to search, find and filter songs by music key/bpm in a spotify playlist',
+    data: {
+      year: 2024,
+      url: 'https://harmonique.vercel.app',
+      details: "It's a personal project where the goal was to utilize Spotify's API. I created the application from scratch",
+      image: {
+        src: '/imgs/harmonique-cover.webp',
+      }, 
+      meta: {
+        stack: ['React', 'Next.js'],
+        releaseYear: 2024,
+        client: "None",
+      }
+    }
+  },
+  {
     id: 8,
     title: 'Password',
     description: 'A small website to create a password with a few clicks',
@@ -24,24 +42,6 @@ export const items: IWorkItem[] = [
         client: 'None',
       },
     },
-  },
-  {
-    id: 2,
-    title: 'Harmonique',
-    description: 'A Web application to search, find and filter songs by music key/bpm in a spotify playlist',
-    data: {
-      year: 2024,
-      url: 'https://harmonique.vercel.app',
-      details: "It's a personal project where the goal was to utilize Spotify's API. I created the application from scratch",
-      image: {
-        src: '/imgs/harmonique-cover.webp',
-      }, 
-      meta: {
-        stack: ['React', 'Next.js'],
-        releaseYear: 2024,
-        client: "None",
-      }
-    }
   },
   // {
   //   id: 2,
