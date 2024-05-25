@@ -1,18 +1,14 @@
 import {
   Button,
-  LaxImg,
-  Nav,
-  PageWrapper,
-  SlidingTexts,
   CustomLink,
+  LaxImg,
+  Layout,
+  MainTitle,
+  SlidingTexts,
 } from '@components'
-import type { NextPage } from 'next'
-import { useEffect, useState } from 'react'
-import { Layout, MainTitle } from '@components'
-import Head from 'next/head'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { motion } from 'framer-motion'
+import type { Metadata, NextPage } from 'next'
 import s from './index.module.scss'
-import { motion, useScroll } from 'framer-motion'
 
 export const Description = () => {
   return (
@@ -56,10 +52,14 @@ export const Description = () => {
   )
 }
 
+export const metadata: Metadata = {
+  title: 'Quentin Grancher - About Me',
+}
+
 const About: NextPage = () => {
   return (
     <>
-      <Layout title="About Me">
+      <Layout>
         <div className={s.container}>
           <MainTitle title="[A]bout [M]e" />
         </div>

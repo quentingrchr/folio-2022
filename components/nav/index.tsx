@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import s from './styles.module.scss'
-import cn from 'classnames'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import { ArrowButton } from '..'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Burger } from '@components'
+import cn from 'classnames'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React, { useEffect } from 'react'
+import { ArrowButton } from '..'
+import s from './styles.module.scss'
 
 export type IProps = {}
 

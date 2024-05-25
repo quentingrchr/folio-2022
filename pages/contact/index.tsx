@@ -1,16 +1,17 @@
-import { Button, Nav, PageWrapper } from '@components'
-import type { NextPage } from 'next'
-import { Layout, MainTitle } from '@components'
-import Head from 'next/head'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Button, Layout, MainTitle } from '@components'
+import type { Metadata, NextPage } from 'next'
 import s from './index.module.scss'
 
 import 'swiper/css'
 
+export const metadata: Metadata = {
+  title: 'Quentin Grancher - Contact',
+}
+
 const Contact: NextPage = () => {
   return (
     <>
-      <Layout title="Contact Me">
+      <Layout>
         <div className={s.container}>
           <MainTitle
             title="Contact [M]e"
@@ -35,29 +36,6 @@ const Contact: NextPage = () => {
             </div>
           </MainTitle>
         </div>
-
-        {/* <div>
-          <Swiper
-            spaceBetween={50}
-            slidesPerView={3}
-          >
-            <SwiperSlide>
-              <img src="https://source.unsplash.com/1600x900/" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://source.unsplash.com/1600x900/" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://source.unsplash.com/1600x900/" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://source.unsplash.com/1600x900/" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://source.unsplash.com/1600x900/" alt="" />
-            </SwiperSlide>
-          </Swiper>
-        </div> */}
       </Layout>
     </>
   )

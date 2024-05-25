@@ -1,21 +1,26 @@
-import { ThumbnailsSlider, WorkDescriptions, WorkModal } from '@components'
-import { useEffect, useState, useRef, useLayoutEffect } from 'react'
-import type { NextPage } from 'next'
-import { Layout, MainTitle } from '@components'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import {
-  MODAL_WORK,
-  activeModalState,
-  modalDataState,
-} from '@recoil/modal/atom'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
-import { useScroll } from 'framer-motion'
-import s from './index.module.scss'
-import { items, yearData } from '../../data/works'
-import 'swiper/css'
+  Layout,
+  MainTitle,
+  ThumbnailsSlider,
+  WorkDescriptions,
+  WorkModal,
+} from '@components'
 import { isMobileState } from '@recoil/layout/atom'
+import { MODAL_WORK, activeModalState } from '@recoil/modal/atom'
+import { useScroll } from 'framer-motion'
+import type { Metadata, NextPage } from 'next'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import 'swiper/css'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { items, yearData } from '../../data/works'
+import s from './index.module.scss'
 
 import cn from 'classnames'
+
+export const metadata: Metadata = {
+  title: 'Quentin Grancher - Works',
+}
 
 const Works: NextPage = () => {
   const isMobile = useRecoilValue(isMobileState)
@@ -113,8 +118,8 @@ const Works: NextPage = () => {
 
   return (
     <>
-      <Layout title="My Works">
-        {items.map((item, index) => {
+      <Layout>
+        {items.map((item) => {
           return <WorkModal key={item.id} item={item} />
         })}
         <div className={s.scrollContainer}>

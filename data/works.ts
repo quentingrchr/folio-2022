@@ -1,31 +1,41 @@
 import { IWorkItem } from '@interfaces'
+import cloudyBayCover from '@public/imgs/cloudy-bay-cover.webp'
+import grCover from '@public/imgs/gr-cover.png'
+import hamoniqueCover from '@public/imgs/harmonique-cover.png'
+import kangouCover from '@public/imgs/kangou-cover.png'
+import magicCover from '@public/imgs/magic-cover.png'
+import passwordCover from '@public/imgs/password-cover.webp'
+import vdoCover from '@public/imgs/vdo-cover.png'
+
 export const items: IWorkItem[] = [
   {
-    id: 1,
+    id: 'main',
     title: 'My [W]orks',
     description:
       'SELECTED solo and team projects I HAVE DONE SINCE 2018, scroll to navigate',
   },
   {
-    id: 2,
+    id: 'harmonique',
     title: 'Harmonique',
-    description: 'A Web application to search, find and filter songs by music key/bpm in a spotify playlist',
+    description:
+      'A Web application to search, find and filter songs by music key/bpm in a spotify playlist',
     data: {
       year: 2024,
       url: 'https://harmonique.vercel.app',
-      details: "It's a personal project where the goal was to utilize Spotify's API. I created the application from scratch",
+      details:
+        "It's a personal project where the goal was to utilize Spotify's API. I created the application from scratch",
       image: {
-        src: '/imgs/harmonique-cover.webp',
-      }, 
+        src: hamoniqueCover,
+      },
       meta: {
         stack: ['React', 'Next.js'],
         releaseYear: 2024,
-        client: "None",
-      }
-    }
+        client: 'None',
+      },
+    },
   },
   {
-    id: 8,
+    id: 'password',
     title: 'Password',
     description: 'A small website to create a password with a few clicks',
     data: {
@@ -34,7 +44,7 @@ export const items: IWorkItem[] = [
       details:
         'Password generator creates random passwords based on parameters you set. Like length, wether it should contains uppercased letters, symbols or numbers. Easy to use.',
       image: {
-        src: '/imgs/password-cover.webp',
+        src: passwordCover,
       },
       meta: {
         stack: ['Svelte', 'Sass'],
@@ -43,28 +53,8 @@ export const items: IWorkItem[] = [
       },
     },
   },
-  // {
-  //   id: 2,
-  //   title: 'Simply',
-  //   description:
-  //     'A (fake) fully editable e-commerce website for a jewelry brand, inspired by a wix template',
-  //   data: {
-  //     year: 2022,
-  //     url: 'https://simply-omega.vercel.app',
-  //     details:
-  //       'It is a personal project where the goal was to develop an administrable e-commerce website for a potential client. I worked alone on the development but I was inspired by a Wix template for the models. The content of the site can be edited via a back-office.',
-  //     image: {
-  //       src: '/imgs/simply-cover.webp',
-  //     },
-  //     meta: {
-  //       stack: ['React', 'Next.js', 'Strapi', 'Sass'],
-  //       releaseYear: 2021,
-  //       client: 'None',
-  //     },
-  //   },
-  // },
   {
-    id: 3,
+    id: 'cloudy-bay',
     title: 'Cloudy Bay',
     description: 'A light e-commerce website for a winery in New Zealand',
     data: {
@@ -73,7 +63,7 @@ export const items: IWorkItem[] = [
       details:
         'This is a team project where we had to develop an editable e-commerce website. I worked with 3 other developers, and I was mainly focused on the front-end part of the website. The content of the site can be edited via a Drupal back-office.',
       image: {
-        src: '/imgs/cloudy-bay-cover.webp',
+        src: cloudyBayCover,
       },
       meta: {
         stack: ['Gatsby', 'Styled components', 'Drupal', 'GraphQL'],
@@ -83,26 +73,26 @@ export const items: IWorkItem[] = [
     },
   },
   {
-    id: 4,
-    title: "The Collection",
+    id: 'the-collection',
+    title: 'The Collection',
     description: 'Manageable luxury hotel website with a slick design',
     data: {
       year: 2022,
       url: 'https://the-c.com/fr/',
       image: {
-        src: '/imgs/vdo-cover.webp',
+        src: vdoCover,
       },
       details:
         "A project created from a wordpress starter named 'Presspack'. Polished designs and animations, in a complete site including a blog, several languages, and a lot of additional sections. This is a team project done at ultranoir where I worked as a developer. The content of the site can be edited via a back-office.",
       meta: {
         stack: ['Wordpress', 'PHP', 'Sass', 'JavaScript'],
         releaseYear: 2022,
-        client: "The Collection",
+        client: 'The Collection',
       },
     },
   },
   {
-    id: 5,
+    id: 'magic-ball',
     title: 'Magic Ball',
     description:
       "There's nothing quite like coming up with a random excuse and canceling plans.",
@@ -110,7 +100,7 @@ export const items: IWorkItem[] = [
       year: 2021,
       url: 'https://magic-ball-of-excuses.vercel.app',
       image: {
-        src: '/imgs/magic-cover.webp',
+        src: magicCover,
       },
       details:
         'A website to never hang out with friends again and get out of anything with varying levels of success. This is a personal project heavily inspired by a design found on dribble by Michael Crawford. I recreated his design and tried to bring it to life in a website.',
@@ -122,7 +112,7 @@ export const items: IWorkItem[] = [
     },
   },
   {
-    id: 6,
+    id: 'golden-record',
     title: 'Golden Rec.',
     description:
       'A web documentary about the mysterious Golden Record launched aboard NASA’s Voyager Spacecraft 1 and 2 in 1977',
@@ -130,7 +120,7 @@ export const items: IWorkItem[] = [
       url: 'https://golden-record-webdoc.netlify.app',
       year: 2021,
       image: {
-        src: '/imgs/gr-cover.webp',
+        src: grCover,
       },
       details:
         'This a school projet I’ve done at HETIC with a small group. The goal was to created a web documentary on a topic of our choosing. We chose to showcase the story of the Golden Record, the most ambitious message sent into space. A gold-platted disk supposed to gives a better chance for future extraterrestrial intelligence life visitors to find out that we exist or once existed.',
@@ -142,14 +132,14 @@ export const items: IWorkItem[] = [
     },
   },
   {
-    id: 7,
+    id: 'kangou-fire',
     title: 'Kangou Fire',
     description: 'Vanilla js 2D maze game, you get to play a kangourou',
     data: {
       url: 'https://kangou-fire.vercel.app/',
       year: 2020,
       image: {
-        src: '/imgs/kangou-cover.webp',
+        src: kangouCover,
       },
       details:
         "This is a school project, the goal was to create a web game based on the theme of the year, which was 'Before, after'. We designed and developed a maze game based around the fact that the player can swap between environments. You're playing a kangourou in Australia forest, and you'll have find you way to the burrow with your babies. To get to the burrow you can push rocks or you can press SPACE BAR to swap on the second environment, but be careful to not swap on fire.",
@@ -160,9 +150,12 @@ export const items: IWorkItem[] = [
       },
     },
   },
-]
+] as IWorkItem[]
 
-export const yearData: any = {}
+export type YearData = Record<number, string[]>
+
+export const yearData: YearData = {}
+
 items.forEach((item) => {
   if (!item.data) return
   const year = item.data.year
