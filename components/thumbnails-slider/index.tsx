@@ -1,18 +1,20 @@
-import React from 'react'
-import s from './styles.module.scss'
-import cn from 'classnames'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { motion } from 'framer-motion'
+import { YearData } from '@data/works'
 import { IWorkItem } from '@interfaces'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { isMobileState } from '@recoil/layout/atom'
+import cn from 'classnames'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { useRecoilValue } from 'recoil'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper as SwiperType } from 'swiper/types'
+import s from './styles.module.scss'
 
 export type IProps = {
   activeItem: number
-  yearData: any
-  items: any
-  setThumbnailSwiper: any
-  onItemClick: (index: number, id: number) => void
+  yearData: YearData
+  items: IWorkItem[]
+  setThumbnailSwiper: (swiper: SwiperType) => void
+  onItemClick: (index: number, id: string) => void
 }
 
 const Year = ({ year }: { year: number | null }) => {
@@ -101,7 +103,7 @@ export default function ThumbnailsSlider({
                 >
                   <Year year={prinYear ? year : null} />
                   <div className={s.thumbnailContainer}>
-                    <img
+                    <Image
                       className={cn(s.thumbnail, {
                         [s.active]: activeItem === index,
                       })}

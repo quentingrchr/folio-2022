@@ -1,9 +1,9 @@
-import React, { Children, useEffect } from 'react'
-import s from './styles.module.scss'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { activeModalState } from '@recoil/modal/atom'
 import { scrollDisabledState } from '@recoil/scroll/atom'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import s from './styles.module.scss'
 
 import cn from 'classnames'
 import { AnimatePresence, motion } from 'framer-motion'

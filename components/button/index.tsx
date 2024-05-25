@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
-import s from './styles.module.scss'
 import cn from 'classnames'
 import Link from 'next/link'
+import React from 'react'
+import s from './styles.module.scss'
 
 export type IProps = {
   label: string
@@ -42,17 +42,17 @@ export default function Button({
 
   if (href !== undefined) {
     return (
-      <Link href={href} target="_blank">
-        <a
-          className={cn(s.button, s[variant], {
-            [s.fullWidth]: fullWidth,
-          })}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          {...otherProps}
-        >
-          {!hoverText ? label : isHovered ? hoverText : label}
-        </a>
+      <Link
+        href={href}
+        target="_blank"
+        className={cn(s.button, s[variant], {
+          [s.fullWidth]: fullWidth,
+        })}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...otherProps}
+      >
+        {!hoverText ? label : isHovered ? hoverText : label}
       </Link>
     )
   } else {

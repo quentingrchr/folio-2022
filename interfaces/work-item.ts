@@ -1,14 +1,15 @@
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+
 export default interface IWorkItem {
-  id: number
+  id: string
   title: string
   description: string
   titleWidth?: number
   data?: {
     year: number
     url?: string
-
     image: {
-      src: string
+      src: StaticImport | string
     }
     details: string
     meta: {

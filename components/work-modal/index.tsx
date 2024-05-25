@@ -1,16 +1,12 @@
-import React from 'react'
-import s from './styles.module.scss'
-import cn from 'classnames'
-import { AnimatePresence, motion } from 'framer-motion'
-import Link from 'next/link'
-import IcomoonReact from 'icomoon-react'
-import iconSet from '@assets/icomoon/selection.json'
-import { Modal, CloseButton, CustomLink } from '@components'
+import { CloseButton, CustomLink, Modal } from '@components'
 import { IWorkItem } from '@interfaces'
-import { MODAL_WORK, activeModalState } from '@recoil/modal/atom'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { isMobileState } from '@recoil/layout/atom'
+import { MODAL_WORK, activeModalState } from '@recoil/modal/atom'
 import { scrollDisabledState } from '@recoil/scroll/atom'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import s from './styles.module.scss'
 
 export type IProps = {
   item: IWorkItem
@@ -162,7 +158,7 @@ export default function WorksModal({ item }: IProps) {
             </div>
           </motion.div>
           <motion.div
-            className={s.image}
+            className={s.imageWrapper}
             initial="initial"
             animate="open"
             exit="close"
@@ -177,7 +173,8 @@ export default function WorksModal({ item }: IProps) {
             }}
           >
             {!!image && (
-              <motion.img
+              <motion.div
+                className={s.imageContainer}
                 variants={{
                   initial: {
                     opacity: 0,
@@ -197,9 +194,17 @@ export default function WorksModal({ item }: IProps) {
                     },
                   },
                 }}
-                src={image.src}
-                alt={title}
-              />
+              >
+                <Image
+                  src={image.src}
+                  alt={title}
+                  fill
+                  style={{
+                    objectFit: 'cover',
+                  }}
+                  sizes="(max-width: 991px) 100vw, 50vw"
+                />
+              </motion.div>
             )}
           </motion.div>
         </div>
